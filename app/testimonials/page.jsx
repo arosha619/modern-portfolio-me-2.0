@@ -1,3 +1,4 @@
+"use client"
 import { motion } from "framer-motion";
 
 import TestimonialSlider from "../../components/TestimonialSlider";
@@ -31,4 +32,4 @@ const Testimonials = () => {
   );
 };
 
-export default Testimonials;
+export default Testimonials; 

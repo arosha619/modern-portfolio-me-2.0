@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { BsArrowRight } from "react-icons/bs";
 
@@ -117,4 +119,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Contact; 

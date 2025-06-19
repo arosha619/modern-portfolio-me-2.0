@@ -1,13 +1,13 @@
+"use client";
+
 import { motion } from "framer-motion";
 
 import Bulb from "../../components/Bulb";
 import Circles from "../../components/Circles";
-import ServiceSlider from "../../components/ServiceSlider";
+import WorkSlider from "../../components/WorkSlider";
 import { fadeIn } from "../../variants";
 
-export const serviceData = [];
-
-const Services = () => {
+const Work = () => {
   return (
     <div className="h-full bg-primary/30 py-36 flex items-center">
       <Circles />
@@ -20,9 +20,9 @@ const Services = () => {
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="h2 xl:mt-8"
+              className="h2 xl:mt-12"
             >
-              My services <span className="text-accent">.</span>
+              My work <span className="text-accent">.</span>
             </motion.h2>
             <motion.p
               variants={fadeIn("up", 0.4)}
@@ -44,7 +44,7 @@ const Services = () => {
             exit="hidden"
             className="w-full xl:max-w-[65%]"
           >
-            <ServiceSlider />
+            <WorkSlider />
           </motion.div>
         </div>
       </div>
@@ -53,4 +53,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default Work; 
