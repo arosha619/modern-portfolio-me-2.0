@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
       <body>
         <Layout>
           <AnimatePresence mode="wait">
-            <motion.div className="h-full">
+            <motion.div>
               <Transition />
               {children}
             </motion.div>
