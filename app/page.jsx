@@ -3,9 +3,9 @@ import { FaInstagram, FaFacebook, FaLinkedin } from 'react-icons/fa';
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col lg:flex-row items-center justify-between px-4 py-12 bg-white dark:bg-gray-900 gap-8 lg:gap-0">
+    <div className="min-h-screen flex flex-col lg:flex-row items-center justify-between px-4 py-12 bg-white dark:bg-gray-900 gap-8 lg:gap-4">
       {/* Left: Content */}
-      <div className="flex-1 flex flex-col justify-center items-center lg:items-start text-center lg:text-left order-2 lg:order-1">
+      <div className="flex-1 flex flex-col justify-center items-center lg:items-start text-center lg:text-left order-2 lg:order-1 lg:pl-32">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2">
           Hello,<br />I am <span className="text-blue-600 dark:text-blue-400">Yasas Sri Wickramasinghe</span>
         </h1>
