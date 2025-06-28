@@ -3,7 +3,7 @@ import { FaInstagram, FaFacebook, FaLinkedin } from 'react-icons/fa';
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col lg:flex-row items-center justify-between px-4 py-12 bg-white dark:bg-gray-900 gap-8 lg:gap-4">
+    <div className="min-h-screen flex flex-col lg:flex-row items-center justify-between px-4 py-12 bg-white dark:bg-gray-900 gap-8 lg:gap-4 pb-24">
       {/* Left: Content */}
       <div className="flex-1 flex flex-col justify-center items-center lg:items-start text-center lg:text-left order-2 lg:order-1 lg:pl-32">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2">
@@ -37,7 +37,7 @@ export default function Home() {
         </div>
       </div>
       {/* Right: Profile Image with Gradient Back Layer */}
-      <div className="flex-1 flex justify-center items-center order-1 lg:order-2 mb-8 lg:mb-0">
+      <div className="flex-1 flex justify-center items-center order-1 lg:order-2 mb-8 mt-28 lg:mb-0 lg:mt-0">
         <div className="relative">
           <div className="absolute -inset-3 rounded-2xl bg-gradient-to-tr from-green-400 to-blue-500 blur-lg z-0 w-full h-full" />
           <Image
