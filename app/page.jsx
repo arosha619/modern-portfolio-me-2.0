@@ -7,7 +7,7 @@ export default function Home() {
       {/* Left: Content */}
       <div className="flex-1 flex flex-col justify-center items-center lg:items-start text-center lg:text-left order-2 lg:order-1 lg:pl-32 lg:mt-20">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2">
-          Hello,<br />I am <span className="text-blue-600 dark:text-blue-400">Yasas Sri Wickramasinghe</span>
+          Hello,<br />I am <span className="text-blue-600 dark:text-blue-400">Arosha Sandaruwan</span>
         </h1>
         <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-purple-600 dark:text-purple-400 mb-4">
           Doctoral Candidate - PhD in Augmented Reality
@@ -25,7 +25,7 @@ export default function Home() {
             <span className="absolute left-2 top-2 w-full h-full bg-gradient-to-r from-green-400 to-blue-500 rounded -z-10" />
           </a>
           <div className="flex flex-col items-center justify-center bg-purple-600 text-white rounded-xl px-8 py-4 shadow-lg min-w-[120px]">
-            <span className="text-3xl font-bold">10+</span>
+            <span className="text-3xl font-bold">2.5+</span>
             <span className="text-xs font-semibold mt-1">YEARS OF<br />EXPERIENCE</span>
           </div>
         </div>
