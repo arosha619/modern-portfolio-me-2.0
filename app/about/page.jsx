@@ -269,11 +269,13 @@ const About = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true, amount: 0.2 }}
                       transition={{ duration: 0.4, delay: skillIdx * 0.05 }}
-                      className="flex items-center gap-3 bg-black/20 rounded-md px-3 py-2"
+                      className="flex items-center gap-3 bg-black/20 rounded-md px-3 py-2 min-w-0"
                     >
-                      <skill.icon className="text-2xl text-gray-200" />
-                      <span className="font-semibold text-white whitespace-nowrap">{skill.name}</span>
-                      <SkillBar level={skill.level} />
+                      <skill.icon className="text-2xl text-gray-200 flex-shrink-0" />
+                      <span className="font-semibold text-white whitespace-nowrap truncate flex-shrink-0 max-w-[120px]">{skill.name}</span>
+                      <div className="flex-1 min-w-0">
+                        <SkillBar level={skill.level} />
+                      </div>
                     </motion.div>
                   ))}
                 </div>
