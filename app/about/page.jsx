@@ -141,56 +141,94 @@ export const aboutData = [
 ];
 
 const dynamicSkills = [
-  "Python & AI",
+  "Full-Stack Development",
   "React & Next.js",
-  "Node.js & Express",
-  "Data Science",
-  "UI/UX Design"
+  "Node.js & NestJS",
+  "DevOps & CI/CD",
+  "Cloud & Database"
 ];
 
 // Skills data structure for new section
 const skillCategories = [
   {
-    title: "Front-End Development",
+    title: "Programming Languages",
     skills: [
-      { name: "NuxtJS", icon: SiNuxtdotjs, level: 4 },
-      { name: "React.js", icon: FaReact, level: 5 },
-      { name: "Tailwind CSS", icon: SiTailwindcss, level: 5 },
-      { name: "Flutter", icon: SiFlutter, level: 3 },
-      { name: "Astro.js", icon: SiAstro, level: 2 },
-      { name: "HTML5", icon: FaHtml5, level: 5 },
-      { name: "Next.js", icon: SiNextdotjs, level: 5 },
-      { name: "Angular", icon: FaAngular, level: 4 },
-      { name: "CSS3", icon: FaCss3, level: 5 },
+      { name: "Java", icon: FaJs, level: 4 },
+      { name: "JavaScript", icon: FaJs, level: 5 },
+      { name: "Python", icon: FaJs, level: 4 },
+      { name: "C", icon: FaJs, level: 3 },
+      { name: "C#", icon: FaJs, level: 3 },
     ],
   },
   {
-    title: "Back-End Development",
+    title: "Frontend Development",
     skills: [
-      { name: "FastAPI", icon: FaNodeJs, level: 3 },
-      { name: "Flask", icon: FaNodeJs, level: 3 },
-      { name: "NestJS", icon: SiNestjs, level: 4 },
-      { name: "REST API", icon: FaSearchengin, level: 4 },
+      { name: "React", icon: FaReact, level: 5 },
+      { name: "Next.js", icon: SiNextdotjs, level: 5 },
+      { name: "TypeScript", icon: SiTypescript, level: 4 },
+      { name: "HTML", icon: FaHtml5, level: 5 },
+      { name: "CSS", icon: FaCss3, level: 5 },
+      { name: "Bootstrap", icon: FaCss3, level: 4 },
+      { name: "Material UI", icon: FaReact, level: 4 },
+      { name: "Tailwind CSS", icon: SiTailwindcss, level: 5 },
+    ],
+  },
+  {
+    title: "Backend Development",
+    skills: [
+      { name: "Nest.js", icon: SiNestjs, level: 4 },
       { name: "Node.js", icon: FaNodeJs, level: 5 },
+      { name: "ExpressJS", icon: FaNodeJs, level: 4 },
+      { name: "Spring Boot", icon: FaJs, level: 3 },
       { name: "GraphQL", icon: SiGraphql, level: 3 },
     ],
   },
   {
-    title: "Search",
+    title: "DevOps & CI/CD",
     skills: [
-      { name: "Elasticsearch", icon: SiElasticsearch, level: 4 },
-      { name: "Algolia", icon: SiAlgolia, level: 4 },
-      { name: "Typesense", icon: SiTypescript, level: 3 },
+      { name: "Git/GitHub", icon: FaJs, level: 5 },
+      { name: "GitHub Actions", icon: FaJs, level: 4 },
+      { name: "Docker", icon: FaDocker, level: 4 },
+      { name: "Jenkins", icon: FaJs, level: 3 },
+      { name: "SonarQube", icon: FaJs, level: 3 },
     ],
   },
-  // Dummy category for demo
   {
-    title: "DevOps & Cloud",
+    title: "Testing & Tools",
     skills: [
-      { name: "Docker", icon: FaDocker, level: 4 },
-      { name: "Kubernetes", icon: FaReact, level: 2 },
-      { name: "AWS", icon: FaAws, level: 3 },
-      { name: "Azure", icon: FaReact, level: 2 },
+      { name: "Postman", icon: FaJs, level: 4 },
+      { name: "JUnit", icon: FaJs, level: 3 },
+    ],
+  },
+  {
+    title: "Cloud Platforms",
+    skills: [
+      { name: "AWS", icon: FaAws, level: 4 },
+      { name: "Firebase", icon: FaJs, level: 4 },
+    ],
+  },
+  {
+    title: "Operating Systems",
+    skills: [
+      { name: "Windows", icon: FaJs, level: 5 },
+      { name: "Linux", icon: FaJs, level: 4 },
+    ],
+  },
+  {
+    title: "Databases",
+    skills: [
+      { name: "MySQL", icon: FaJs, level: 4 },
+      { name: "MSSQL", icon: FaJs, level: 3 },
+      { name: "MongoDB", icon: FaJs, level: 4 },
+      { name: "PostgreSQL", icon: FaJs, level: 3 },
+    ],
+  },
+  {
+    title: "Other Tools",
+    skills: [
+      { name: "Figma", icon: FaFigma, level: 4 },
+      { name: "Jira", icon: FaJs, level: 4 },
+      { name: "Clickup", icon: FaJs, level: 3 },
     ],
   },
 ];
@@ -246,7 +284,7 @@ const About = () => {
           exit="hidden"
           className="h2"
         >
-          Captivating <span className="text-accent">stories</span> birth magnificent designs.
+          Transforming <span className="text-accent">ideas</span> into exceptional digital experiences.
         </motion.h2>
         <motion.p
           variants={fadeIn("right", 0.4)}
@@ -254,7 +292,9 @@ const About = () => {
           animate="show"
           className="max-w-[500px] mb-6 xl:mb-8 px-2 xl:px-0"
         >
-          10 years ago, I begin freelancing as a developer. Since then, I've done remote work for agencies, consulted for startups, and collabrated on digital products for business and consumer use.
+          A passionate Software Engineer with expertise in full-stack development, specializing in React, Next.js, and Node.js. 
+          From Sri Lanka to South Korea, I've built scalable applications and collaborated with international teams to deliver 
+          innovative solutions that drive business growth and user satisfaction.
         </motion.p>
       </div>
 
@@ -351,7 +391,7 @@ const About = () => {
                           <FaBriefcase className="text-white text-xl" />
                         </div>
                         
-                        <div className="flex-1">
+                  <div className="flex-1">
                           <h4 className="text-xl font-bold text-white group-hover:text-accent transition-colors duration-300 mb-1">
                             {item.title}
                           </h4>
@@ -393,8 +433,8 @@ const About = () => {
                             <p className="text-white/80 text-sm leading-relaxed">{highlight}</p>
                           </motion.div>
                         ))}
-                      </div>
-                    </div>
+                  </div>
+                </div>
                     
                     {/* Technologies Section */}
                     <div className="mb-4">
@@ -413,8 +453,8 @@ const About = () => {
                           >
                             {tech}
                           </motion.span>
-                        ))}
-                      </div>
+              ))}
+            </div>
                     </div>
                     
                     {/* Progress Indicator */}
@@ -557,8 +597,8 @@ const About = () => {
                     </div>
                     <div className="absolute bottom-2 left-2 opacity-20">
                       <div className="w-4 h-4 bg-accent/20 rounded-full" />
-                    </div>
                   </div>
+                </div>
                 </motion.div>
               ))}
             </div>
