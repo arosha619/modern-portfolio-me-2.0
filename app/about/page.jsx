@@ -96,16 +96,16 @@ export const aboutData = [
     title: "credentials",
     info: [
       {
-        title: "Web Development - ABC University, LA, CA",
-        stage: "2011",
+        title: "B.Sc. (Hons) in Information Technology",
+        stage: "2024",
+        institution: "Faculty of Information Technology, University of Moratuwa",
+        details: "Bachelor's degree with honors in Information Technology",
       },
       {
-        title: "Computer Science Diploma - AV Technical Institute",
-        stage: "2009",
-      },
-      {
-        title: "Certified Graphic Designer - ABC Institute, Los Angeles, CA",
-        stage: "2006",
+        title: "G.C.E Advanced Level - Physical Science Stream",
+        stage: "2018",
+        institution: "Peradeniya Central College",
+        details: "1 'A', 2 'B's - ('A' for Combined Mathematics) | Z-Score: 1.5544",
       },
     ],
   },
@@ -302,23 +302,122 @@ const About = () => {
             </div>
           </div>
         ) : (
-          // Education Section
-          <div className="w-full max-w-2xl bg-white/5 rounded-lg p-6 flex flex-col gap-6">
-            <h3 className="text-xl font-bold text-accent mb-2 flex items-center gap-2"><FaGraduationCap className="text-accent" /> Education</h3>
-            <div className="relative pl-6">
-              {/* Vertical timeline line */}
-              <div className="absolute left-2 top-0 bottom-0 w-1 bg-gradient-to-b from-accent/60 to-transparent rounded-full" />
+          // Enhanced Education Section
+          <div className="w-full max-w-4xl bg-white/5 rounded-lg p-8 flex flex-col gap-8">
+            <motion.h3 
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-2xl font-bold text-accent mb-4 flex items-center gap-3"
+            >
+              <FaGraduationCap className="text-accent text-3xl" /> 
+              Education Journey
+            </motion.h3>
+            
+            <div className="grid md:grid-cols-2 gap-8">
               {aboutTabs[index].info.map((item, itemI) => (
-                <div key={itemI} className="mb-8 last:mb-0 flex items-start gap-4 relative">
-                  {/* Dot */}
-                  <div className="w-4 h-4 rounded-full bg-accent mt-1.5 border-2 border-white flex-shrink-0" />
-                  <div className="flex-1">
-                    <div className="font-semibold text-white text-lg">{item.title}</div>
-                    <div className="text-xs text-white/50 mt-1">{item.stage}</div>
+                <motion.div
+                  key={itemI}
+                  initial={{ opacity: 0, x: itemI % 2 === 0 ? -50 : 50, y: 30 }}
+                  animate={{ opacity: 1, x: 0, y: 0 }}
+                  transition={{ duration: 0.8, delay: itemI * 0.2 }}
+                  whileHover={{ 
+                    scale: 1.02,
+                    transition: { duration: 0.3 }
+                  }}
+                  className="relative group"
+                >
+                  {/* Card Background with Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-xl blur-sm group-hover:blur-md transition-all duration-300" />
+                  
+                  {/* Main Card */}
+                  <div className="relative bg-black/30 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-accent/50 transition-all duration-300">
+                    
+                    {/* Degree Badge */}
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-12 h-12 bg-gradient-to-br from-accent to-blue-500 rounded-full flex items-center justify-center">
+                          <FaGraduationCap className="text-white text-xl" />
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-bold text-white group-hover:text-accent transition-colors duration-300">
+                            {item.title}
+                          </h4>
+                          <p className="text-sm text-gray-400">{item.stage}</p>
+                        </div>
+                      </div>
+                      
+                      {/* Year Badge */}
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ duration: 0.5, delay: itemI * 0.3 + 0.5 }}
+                        className="bg-accent/20 border border-accent/30 rounded-full px-3 py-1"
+                      >
+                        <span className="text-accent font-bold text-sm">{item.stage}</span>
+                      </motion.div>
+                    </div>
+                    
+                    {/* Institution */}
+                    <div className="mb-3">
+                      <p className="text-blue-300 font-medium text-sm mb-1">Institution</p>
+                      <p className="text-white/90 text-base">{item.institution}</p>
+                    </div>
+                    
+                    {/* Details */}
+                    {item.details && (
+                      <div className="mb-4">
+                        <p className="text-blue-300 font-medium text-sm mb-1">Details</p>
+                        <p className="text-white/80 text-sm leading-relaxed">{item.details}</p>
+                      </div>
+                    )}
+                    
+                    {/* Progress Bar for Degree Completion */}
+                    <div className="mt-4">
+                      <div className="flex justify-between text-xs text-gray-400 mb-1">
+                        <span>Progress</span>
+                        <span>{item.stage === "2024" ? "Completed" : "Completed"}</span>
+                      </div>
+                      <div className="w-full bg-gray-700 rounded-full h-2">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          animate={{ width: "100%" }}
+                          transition={{ duration: 1, delay: itemI * 0.4 + 0.8 }}
+                          className="bg-gradient-to-r from-accent to-blue-500 h-2 rounded-full"
+                        />
+                      </div>
+                    </div>
+                    
+                    {/* Decorative Elements */}
+                    <div className="absolute top-2 right-2 opacity-20">
+                      <div className="w-8 h-8 border border-accent/30 rounded-full" />
+                    </div>
+                    <div className="absolute bottom-2 left-2 opacity-20">
+                      <div className="w-4 h-4 bg-accent/20 rounded-full" />
+                    </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
+            
+            {/* Education Summary */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="mt-6 p-4 bg-gradient-to-r from-accent/10 to-blue-500/10 rounded-lg border border-accent/20"
+            >
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-6 h-6 bg-accent rounded-full flex items-center justify-center">
+                  <span className="text-white text-xs font-bold">✓</span>
+                </div>
+                <h4 className="text-white font-semibold">Academic Excellence</h4>
+              </div>
+              <p className="text-white/80 text-sm">
+                Strong foundation in Information Technology with honors degree and excellent performance in Advanced Level examinations, 
+                demonstrating consistent academic achievement and technical proficiency.
+              </p>
+            </motion.div>
           </div>
         )}
       </div>
