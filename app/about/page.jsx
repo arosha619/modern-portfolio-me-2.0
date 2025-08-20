@@ -79,16 +79,45 @@ export const aboutData = [
     title: "experience",
     info: [
       {
-        title: "UX/UI Designer - XYZ Company",
-        stage: "2012 - 2023",
+        title: "Software Engineer",
+        company: "MEDIIO Ltd.",
+        location: "Seoul, South Korea",
+        stage: "Jul 2024 - Present",
+        highlights: [
+          "Developed responsive user interfaces using Next.js",
+          "Built robust APIs with NestJS for backend services",
+          "Migrated video service from Twilio to Agora",
+          "Built secure Google OAuth authentication with NextAuth",
+          "Improved SEO performance in Next.js app",
+          "Created cross-platform mobile app with React Native WebView"
+        ],
+        technologies: ["Next.js", "NestJS", "TypeScript", "GraphQL", "Tailwind CSS", "Firebase"]
       },
       {
-        title: "Web Developer - ABC Agency",
-        stage: "2010 - 2012",
+        title: "Associate Software Engineer",
+        company: "Hasthiya IT (Pvt) Ltd",
+        location: "Sri Lanka",
+        stage: "Jul 2023 - Apr 2024",
+        highlights: [
+          "Developed seamless and responsive frontends",
+          "Built robust and efficient backends",
+          "Researched and implemented DevOps practices",
+          "Integrated CI/CD pipelines for deployment efficiency"
+        ],
+        technologies: ["React", "Node.js", "MySQL", "AWS", "GitHub Actions"]
       },
       {
-        title: "Intern - DEF Corporation",
-        stage: "2008 - 2010",
+        title: "Trainee Software Engineer",
+        company: "Hasthiya IT (Pvt) Ltd",
+        location: "Sri Lanka",
+        stage: "Dec 2022 - Jun 2023",
+        highlights: [
+          "Followed best practices for Frontend and Backend Development",
+          "Integrated REST APIs for seamless data communication",
+          "Applied Agile methodologies to enhance project efficiency",
+          "Tested & Fixed bugs to ensure application stability"
+        ],
+        technologies: ["React", "Node.js", "ExpressJS", "MySQL", "Firebase", "Android"]
       },
     ],
   },
@@ -283,23 +312,157 @@ const About = () => {
             ))}
           </div>
         ) : index === 1 ? (
-          // Experience Section
-          <div className="w-full max-w-2xl bg-white/5 rounded-lg p-6 flex flex-col gap-6">
-            <h3 className="text-xl font-bold text-accent mb-2 flex items-center gap-2"><FaBriefcase className="text-accent" /> Experience</h3>
-            <div className="relative pl-6">
-              {/* Vertical timeline line */}
-              <div className="absolute left-2 top-0 bottom-0 w-1 bg-gradient-to-b from-accent/60 to-transparent rounded-full" />
+          // Enhanced Experience Section
+          <div className="w-full max-w-6xl bg-white/5 rounded-lg p-8 flex flex-col gap-8">
+            <motion.h3 
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-2xl font-bold text-accent mb-6 flex items-center gap-3"
+            >
+              <FaBriefcase className="text-accent text-3xl" /> 
+              Professional Journey
+            </motion.h3>
+            
+            <div className="space-y-8">
               {aboutTabs[index].info.map((item, itemI) => (
-                <div key={itemI} className="mb-8 last:mb-0 flex items-start gap-4 relative">
-                  {/* Dot */}
-                  <div className="w-4 h-4 rounded-full bg-accent mt-1.5 border-2 border-white flex-shrink-0" />
-                  <div className="flex-1">
-                    <div className="font-semibold text-white text-lg">{item.title}</div>
-                    <div className="text-xs text-white/50 mt-1">{item.stage}</div>
+                <motion.div
+                  key={itemI}
+                  initial={{ opacity: 0, x: -50, y: 30 }}
+                  animate={{ opacity: 1, x: 0, y: 0 }}
+                  transition={{ duration: 0.8, delay: itemI * 0.2 }}
+                  whileHover={{ 
+                    scale: 1.02,
+                    transition: { duration: 0.3 }
+                  }}
+                  className="relative group"
+                >
+                  {/* Card Background with Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-blue-500/10 rounded-xl blur-sm group-hover:blur-md transition-all duration-300" />
+                  
+                  {/* Main Card */}
+                  <div className="relative bg-black/30 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-accent/50 transition-all duration-300">
+                    
+                    {/* Header Section */}
+                    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6 gap-4">
+                      <div className="flex items-start gap-4">
+                        {/* Role Badge */}
+                        <div className="w-14 h-14 bg-gradient-to-br from-accent to-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                          <FaBriefcase className="text-white text-xl" />
+                        </div>
+                        
+                        <div className="flex-1">
+                          <h4 className="text-xl font-bold text-white group-hover:text-accent transition-colors duration-300 mb-1">
+                            {item.title}
+                          </h4>
+                          <div className="flex items-center gap-2 text-blue-300 font-medium">
+                            <span>{item.company}</span>
+                            <span className="text-gray-400">•</span>
+                            <span className="text-gray-400">{item.location}</span>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Duration Badge */}
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ duration: 0.5, delay: itemI * 0.3 + 0.5 }}
+                        className="bg-accent/20 border border-accent/30 rounded-full px-4 py-2 flex-shrink-0"
+                      >
+                        <span className="text-accent font-bold text-sm">{item.stage}</span>
+                      </motion.div>
+                    </div>
+                    
+                    {/* Highlights Section */}
+                    <div className="mb-6">
+                      <h5 className="text-blue-300 font-semibold mb-3 flex items-center gap-2">
+                        <div className="w-2 h-2 bg-accent rounded-full"></div>
+                        Key Achievements
+                      </h5>
+                      <div className="grid md:grid-cols-2 gap-3">
+                        {item.highlights.map((highlight, highlightIdx) => (
+                          <motion.div
+                            key={highlightIdx}
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.4, delay: itemI * 0.2 + highlightIdx * 0.1 }}
+                            className="flex items-start gap-2"
+                          >
+                            <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                            <p className="text-white/80 text-sm leading-relaxed">{highlight}</p>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    {/* Technologies Section */}
+                    <div className="mb-4">
+                      <h5 className="text-blue-300 font-semibold mb-3 flex items-center gap-2">
+                        <div className="w-2 h-2 bg-accent rounded-full"></div>
+                        Technologies Used
+                      </h5>
+                      <div className="flex flex-wrap gap-2">
+                        {item.technologies.map((tech, techIdx) => (
+                          <motion.span
+                            key={tech}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.3, delay: itemI * 0.2 + techIdx * 0.05 }}
+                            className="bg-white/10 border border-white/20 rounded-full px-3 py-1 text-xs text-white/90 hover:bg-accent/20 hover:border-accent/30 transition-all duration-200"
+                          >
+                            {tech}
+                          </motion.span>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    {/* Progress Indicator */}
+                    <div className="mt-4">
+                      <div className="flex justify-between text-xs text-gray-400 mb-1">
+                        <span>Experience Level</span>
+                        <span>{itemI === 0 ? "Senior" : itemI === 1 ? "Mid-Level" : "Junior"}</span>
+                      </div>
+                      <div className="w-full bg-gray-700 rounded-full h-2">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          animate={{ width: `${(itemI + 1) * 33.33}%` }}
+                          transition={{ duration: 1, delay: itemI * 0.4 + 0.8 }}
+                          className="bg-gradient-to-r from-accent to-green-500 h-2 rounded-full"
+                        />
+                      </div>
+                    </div>
+                    
+                    {/* Decorative Elements */}
+                    <div className="absolute top-3 right-3 opacity-20">
+                      <div className="w-6 h-6 border border-accent/30 rounded-full" />
+                    </div>
+                    <div className="absolute bottom-3 left-3 opacity-20">
+                      <div className="w-3 h-3 bg-accent/20 rounded-full" />
+                    </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
+            
+            {/* Experience Summary */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.2 }}
+              className="mt-6 p-4 bg-gradient-to-r from-accent/10 to-green-500/10 rounded-lg border border-accent/20"
+            >
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-6 h-6 bg-accent rounded-full flex items-center justify-center">
+                  <span className="text-white text-xs font-bold">⚡</span>
+                </div>
+                <h4 className="text-white font-semibold">Career Growth</h4>
+              </div>
+              <p className="text-white/80 text-sm">
+                Rapid progression from Trainee to Software Engineer, gaining expertise in full-stack development, 
+                DevOps practices, and international experience. Specialized in modern web technologies and mobile development.
+              </p>
+            </motion.div>
           </div>
         ) : (
           // Enhanced Education Section
