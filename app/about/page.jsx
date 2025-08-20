@@ -261,9 +261,32 @@ const About = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center max-w-screen-xl mx-auto px-4 py-12 gap-8 xl:gap-4 pb-24">
+      {/* About Me Section */}
+      <div className="w-full flex flex-col items-center text-center mb-8 mt-20">
+        <motion.h2
+          variants={fadeIn("right", 0.2)}
+          initial="hidden"
+          animate="show"
+          exit="hidden"
+          className="h2 text-center"
+        >
+          Transforming <span className="text-accent">ideas</span> into exceptional digital experiences.
+        </motion.h2>
+        <motion.p
+          variants={fadeIn("right", 0.4)}
+          initial="hidden"
+          animate="show"
+          className="max-w-[600px] mb-6 xl:mb-8 px-4 xl:px-0 text-center"
+        >
+          A passionate Software Engineer with expertise in full-stack development, specializing in React, Next.js, and Node.js. 
+          From Sri Lanka to South Korea, I've built scalable applications and collaborated with international teams to deliver 
+          innovative solutions that drive business growth and user satisfaction.
+        </motion.p>
+      </div>
+
       {/* Specialized In Section */}
-      <div className="w-full flex flex-col items-start xl:items-start mb-8 mt-20">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2">
+      <div className="w-full flex flex-col items-center text-center mb-8">
+        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
           I'm Specialized in
         </h2>
         <div className="flex items-center text-xl md:text-2xl font-mono">
@@ -275,82 +298,111 @@ const About = () => {
         </div>
       </div>
 
-      {/* About Me Section */}
-      <div className="w-full flex flex-col items-start xl:items-start mb-8">
-        <motion.h2
-          variants={fadeIn("right", 0.2)}
-          initial="hidden"
-          animate="show"
-          exit="hidden"
-          className="h2"
-        >
-          Transforming <span className="text-accent">ideas</span> into exceptional digital experiences.
-        </motion.h2>
-        <motion.p
-          variants={fadeIn("right", 0.4)}
-          initial="hidden"
-          animate="show"
-          className="max-w-[500px] mb-6 xl:mb-8 px-2 xl:px-0"
-        >
-          A passionate Software Engineer with expertise in full-stack development, specializing in React, Next.js, and Node.js. 
-          From Sri Lanka to South Korea, I've built scalable applications and collaborated with international teams to deliver 
-          innovative solutions that drive business growth and user satisfaction.
-        </motion.p>
-      </div>
-
       {/* Skills, Experience, Education Tabs Section */}
       <div className="w-full flex flex-col items-center justify-center mt-4">
-        <div className="flex gap-x-4 xl:gap-x-8 justify-center mb-4 w-full max-w-2xl">
+        <div className="flex gap-x-12 xl:gap-x-20 2xl:gap-x-24 justify-center mb-8 w-full max-w-4xl">
           {aboutTabs.map((item, itemI) => (
             <div
               key={itemI}
               className={`${
                 index === itemI &&
                 "text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300"
-              } cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:-bottom-1 after:left-0`}
+              } cursor-pointer capitalize text-lg xl:text-xl 2xl:text-2xl font-semibold relative after:w-12 after:h-[3px] after:bg-white after:absolute after:-bottom-2 after:left-0 hover:text-accent/80 transition-all duration-300`}
               onClick={() => setIndex(itemI)}
             >
               {item.title === 'credentials' ? 'Education' : item.title}
             </div>
           ))}
         </div>
-        {/* Custom Skills Section for Skills Tab */}
-        {index === 0 ? (
-          <div className="w-full max-w-5xl bg-white/5 rounded-lg p-6 flex flex-col gap-10">
-            {skillCategories.map((cat, catIdx) => (
-              <motion.div
-                key={cat.title}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.5, delay: catIdx * 0.1 }}
-                className="w-full"
-              >
-                <div className="flex items-center mb-4">
-                  <div className="border-l-4 border-l-lime-400 h-6 mr-3" />
-                  <h4 className="text-lg font-bold text-white">{cat.title}</h4>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                  {cat.skills.map((skill, skillIdx) => (
-                    <motion.div
-                      key={skill.name}
-                      initial={{ opacity: 0, x: 40 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true, amount: 0.2 }}
-                      transition={{ duration: 0.4, delay: skillIdx * 0.05 }}
-                      className="flex items-center gap-3 bg-black/20 rounded-md px-3 py-2 min-w-0"
-                    >
-                      <skill.icon className="text-2xl text-gray-200 flex-shrink-0" />
-                      <span className="font-semibold text-white whitespace-nowrap truncate flex-shrink-0 max-w-[120px]">{skill.name}</span>
-                      <div className="flex-1 min-w-0">
-                        <SkillBar level={skill.level} />
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                 {/* Enhanced Skills Section for Skills Tab */}
+         {index === 0 ? (
+           <div className="w-full max-w-7xl bg-white/5 rounded-lg p-8 flex flex-col gap-12">
+             {skillCategories.map((cat, catIdx) => (
+               <motion.div
+                 key={cat.title}
+                 initial={{ opacity: 0, y: 40 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true, amount: 0.2 }}
+                 transition={{ duration: 0.5, delay: catIdx * 0.1 }}
+                 className="w-full"
+               >
+                 {/* Category Header */}
+                 <div className="flex items-center mb-6">
+                   <div className="border-l-4 border-l-accent h-8 mr-4" />
+                   <h4 className="text-xl font-bold text-white">{cat.title}</h4>
+                 </div>
+                 
+                 {/* Skills Grid */}
+                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
+                   {cat.skills.map((skill, skillIdx) => (
+                     <motion.div
+                       key={skill.name}
+                       initial={{ opacity: 0, y: 20 }}
+                       whileInView={{ opacity: 1, y: 0 }}
+                       viewport={{ once: true, amount: 0.2 }}
+                       transition={{ duration: 0.4, delay: skillIdx * 0.05 }}
+                       whileHover={{ 
+                         scale: 1.02,
+                         transition: { duration: 0.2 }
+                       }}
+                       className="group relative"
+                     >
+                       {/* Card Background */}
+                       <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-blue-500/5 rounded-lg blur-sm group-hover:blur-md transition-all duration-300" />
+                       
+                       {/* Main Card */}
+                       <div className="relative bg-black/20 backdrop-blur-sm border border-white/10 rounded-lg p-4 hover:border-accent/30 transition-all duration-300">
+                         <div className="flex items-center gap-3 mb-3">
+                           <div className="w-10 h-10 bg-gradient-to-br from-accent/20 to-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                             <skill.icon className="text-xl text-gray-200" />
+                           </div>
+                           <span className="font-semibold text-white text-sm truncate">{skill.name}</span>
+                         </div>
+                         
+                         {/* Skill Level */}
+                         <div className="flex items-center justify-between">
+                           <span className="text-xs text-gray-400">Proficiency</span>
+                           <span className="text-xs text-accent font-medium">{skill.level}/5</span>
+                         </div>
+                         
+                         {/* Progress Bar */}
+                         <div className="mt-2 w-full bg-gray-700 rounded-full h-2">
+                           <motion.div
+                             initial={{ width: 0 }}
+                             whileInView={{ width: `${(skill.level / 5) * 100}%` }}
+                             viewport={{ once: true }}
+                             transition={{ duration: 1, delay: skillIdx * 0.1 }}
+                             className="bg-gradient-to-r from-accent to-blue-500 h-2 rounded-full"
+                           />
+                         </div>
+                       </div>
+                     </motion.div>
+                   ))}
+                 </div>
+               </motion.div>
+             ))}
+             
+             {/* Skills Summary */}
+             <motion.div
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               transition={{ duration: 0.6, delay: 0.5 }}
+               className="mt-8 p-6 bg-gradient-to-r from-accent/10 to-blue-500/10 rounded-lg border border-accent/20"
+             >
+               <div className="flex items-center gap-3 mb-3">
+                 <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center">
+                   <span className="text-white text-sm font-bold">⚡</span>
+                 </div>
+                 <h4 className="text-white font-semibold text-lg">Technical Expertise</h4>
+               </div>
+               <p className="text-white/80 text-sm leading-relaxed">
+                 Comprehensive full-stack development skills with expertise in modern web technologies, 
+                 cloud platforms, and DevOps practices. Experienced in building scalable applications 
+                 and collaborating with international teams across diverse technology stacks.
+               </p>
+             </motion.div>
+           </div>
         ) : index === 1 ? (
           // Enhanced Experience Section
           <div className="w-full max-w-6xl bg-white/5 rounded-lg p-8 flex flex-col gap-8">
