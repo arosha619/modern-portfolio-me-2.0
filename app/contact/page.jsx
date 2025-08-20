@@ -3,31 +3,30 @@
 import { motion } from "framer-motion";
 import { BsArrowRight } from "react-icons/bs";
 import { FiMail, FiMapPin } from "react-icons/fi";
-import { FaGithub, FaLinkedin, FaInstagram, FaCalendarAlt } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaMedium, FaCalendarAlt } from "react-icons/fa";
 import { fadeIn } from "../../variants";
 import { useState } from "react";
 
 const CONTACTS = [
   {
     icon: <FiMail className="text-2xl text-accent" />,
-    label: "Mail",
+    label: "Email",
     value: [
-      { text: "abhishekpanthee@proton.me", link: "mailto:abhishekpanthee@proton.me" },
-      { text: "contact@abhishekpanthee.com.np", link: "mailto:contact@abhishekpanthee.com.np" },
+      { text: "aroshsandaruwan619@gmail.com", link: "mailto:aroshsandaruwan619@gmail.com" },
     ],
   },
   {
     icon: <FaCalendarAlt className="text-2xl text-accent" />,
-    label: "Contact",
+    label: "Phone",
     value: [
-      { text: "Calendly", link: "https://calendly.com/" },
+      { text: "(+94) 76 23 56 027", link: "tel:+94762356027" },
     ],
   },
   {
     icon: <FiMapPin className="text-2xl text-accent" />,
     label: "Location",
     value: [
-      { text: "Butwal, Nepal" }
+      { text: "Sri Lanka" }
     ],
   },
 ];
@@ -35,7 +34,7 @@ const CONTACTS = [
 const SOCIALS = [
   { icon: <FaGithub className="text-2xl" />, link: "https://github.com/" },
   { icon: <FaLinkedin className="text-2xl" />, link: "https://linkedin.com/" },
-  { icon: <FaInstagram className="text-2xl" />, link: "https://instagram.com/" },
+  { icon: <FaMedium className="text-2xl" />, link: "https://medium.com/" },
 ];
 
 const Contact = () => {
