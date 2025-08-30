@@ -72,18 +72,18 @@ export const aboutData = [
       {
         title: "Web Development",
         icons: [
-          FaHtml5,
-          FaCss3,
-          FaJs,
-          FaReact,
-          SiNextdotjs,
-          SiFramer,
-          FaWordpress,
+          "FaHtml5",
+          "FaCss3",
+          "FaJs",
+          "FaReact",
+          "SiNextdotjs",
+          "SiFramer",
+          "FaWordpress",
         ],
       },
       {
         title: "UI/UX Design",
-        icons: [FaFigma, SiAdobexd, SiAdobephotoshop],
+        icons: ["FaFigma", "SiAdobexd", "SiAdobephotoshop"],
       },
     ],
   },
@@ -203,6 +203,12 @@ const iconMap = {
   SiMongodb,
   FaUsers,
   FaFigma,
+  SiFramer,
+  FaWordpress,
+  SiAdobexd,
+  SiAdobephotoshop,
+  FaBriefcase,
+  FaGraduationCap,
 };
 
 // Skills data structure for new section
@@ -372,32 +378,32 @@ const About = () => {
           ))}
         </div>
                  {/* Enhanced Skills Section for Skills Tab */}
-         {index === 0 ? (
+        {index === 0 ? (
            <div className="w-full max-w-7xl bg-white/5 rounded-lg p-8 flex flex-col gap-12">
-             {skillCategories.map((cat, catIdx) => (
-               <motion.div
-                 key={cat.title}
-                 initial={{ opacity: 0, y: 40 }}
-                 whileInView={{ opacity: 1, y: 0 }}
-                 viewport={{ once: true, amount: 0.2 }}
-                 transition={{ duration: 0.5, delay: catIdx * 0.1 }}
-                 className="w-full"
-               >
+            {skillCategories.map((cat, catIdx) => (
+              <motion.div
+                key={cat.title}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, delay: catIdx * 0.1 }}
+                className="w-full"
+              >
                  {/* Category Header */}
                  <div className="flex items-center mb-6">
                    <div className="border-l-4 border-l-accent h-8 mr-4" />
                    <h4 className="text-xl font-bold text-white">{cat.title}</h4>
-                 </div>
+                </div>
                  
                  {/* Skills Grid */}
                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
-                   {cat.skills.map((skill, skillIdx) => (
-                     <motion.div
-                       key={skill.name}
+                  {cat.skills.map((skill, skillIdx) => (
+                    <motion.div
+                      key={skill.name}
                        initial={{ opacity: 0, y: 20 }}
                        whileInView={{ opacity: 1, y: 0 }}
-                       viewport={{ once: true, amount: 0.2 }}
-                       transition={{ duration: 0.4, delay: skillIdx * 0.05 }}
+                      viewport={{ once: true, amount: 0.2 }}
+                      transition={{ duration: 0.4, delay: skillIdx * 0.05 }}
                        whileHover={{ 
                          scale: 1.02,
                          transition: { duration: 0.2 }
@@ -432,12 +438,12 @@ const About = () => {
                              className="bg-gradient-to-r from-accent to-blue-500 h-2 rounded-full"
                            />
                          </div>
-                       </div>
-                     </motion.div>
-                   ))}
-                 </div>
-               </motion.div>
-             ))}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
              
              {/* Skills Summary */}
              <motion.div
@@ -459,7 +465,7 @@ const About = () => {
                  and collaborating with international teams across diverse technology stacks.
                </p>
              </motion.div>
-           </div>
+          </div>
         ) : index === 1 ? (
           // Enhanced Experience Section
           <div className="w-full max-w-6xl bg-white/5 rounded-lg p-8 flex flex-col gap-8">

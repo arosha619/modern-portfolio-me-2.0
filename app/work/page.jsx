@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import {
@@ -40,6 +41,18 @@ import Bulb from "../../components/Bulb";
 import Circles from "../../components/Circles";
 import { fadeIn } from "../../variants";
 
+// Icon mapping for server-side compatibility
+const iconMap = {
+  FaChartLine,
+  FaUsers,
+  FaCogs,
+  FaRocket,
+  FaGlobe,
+  FaShieldAlt,
+  FaMobile,
+  FaCode,
+};
+
 // Comprehensive projects based on actual experience
 const projectData = [
   {
@@ -54,7 +67,7 @@ const projectData = [
     role: "Lead Researcher & Developer",
     githubLink: "#", // Placeholder for GitHub link
     liveLink: "#", // Placeholder for live demo
-    icon: FaChartLine,
+    icon: "FaChartLine",
     color: "from-blue-500 to-cyan-500",
     features: ["Industry Trend Analysis", "Strategic Insights", "Corporate Loan Recommendations", "Risk Assessment", "AI-Powered Predictions"],
     image: "/thumb1.jpg" // Placeholder image path
@@ -71,7 +84,7 @@ const projectData = [
     role: "Full-Stack Developer",
     githubLink: "#", // Placeholder for GitHub link
     liveLink: "#", // Placeholder for live demo
-    icon: FaUsers,
+    icon: "FaUsers",
     color: "from-green-500 to-emerald-500",
     features: ["Employee Registration", "Attendance Tracking", "Performance Management", "Reporting System", "Data Security"],
     image: "/thumb2.jpg" // Placeholder image path
@@ -88,7 +101,7 @@ const projectData = [
     role: "Full-Stack Developer",
     githubLink: "#", // Placeholder for GitHub link
     liveLink: "#", // Placeholder for live demo
-    icon: FaCogs,
+    icon: "FaCogs",
     color: "from-purple-500 to-pink-500",
     features: ["Task Creation & Assignment", "Real-time Collaboration", "Progress Tracking", "Review System", "Microservices Architecture"],
     image: "/thumb3.jpg" // Placeholder image path
@@ -105,7 +118,7 @@ const projectData = [
     role: "Full-Stack Developer",
     githubLink: "#", // Placeholder for GitHub link
     liveLink: "#", // Placeholder for live demo
-    icon: FaRocket,
+    icon: "FaRocket",
     color: "from-orange-500 to-red-500",
     features: ["Workout Planning", "Progress Analytics", "Goal Setting", "Social Sharing", "CI/CD Pipeline"],
     image: "/thumb4.jpg" // Placeholder image path
@@ -122,7 +135,7 @@ const projectData = [
     role: "Front-end Developer",
     githubLink: "#", // Placeholder for GitHub link
     liveLink: "#", // Placeholder for live demo
-    icon: FaGlobe,
+    icon: "FaGlobe",
     color: "from-indigo-500 to-purple-500",
     features: ["Queue Management", "NIC Processing", "User Interface", "Government Integration", "Efficiency Optimization"],
     image: "/thumb1.jpg" // Placeholder image path
@@ -139,7 +152,7 @@ const projectData = [
     role: "Full Stack Developer",
     githubLink: "#", // Placeholder for GitHub link
     liveLink: "#", // Placeholder for live demo
-    icon: FaShieldAlt,
+    icon: "FaShieldAlt",
     color: "from-teal-500 to-blue-500",
     features: ["Health Data Management", "Secure Sharing", "Access Control", "HIPAA Compliance", "Medical Imaging"],
     image: "/thumb2.jpg" // Placeholder image path
@@ -156,7 +169,7 @@ const projectData = [
     role: "Full-Stack Developer",
     githubLink: "#", // Placeholder for GitHub link
     liveLink: "#", // Placeholder for live demo
-    icon: FaMobile,
+    icon: "FaMobile",
     color: "from-yellow-500 to-orange-500",
     features: ["Bulk SMS Sending", "Time Scheduling", "Audience Segmentation", "Analytics Reporting", "Mobile Responsive"],
     image: "/thumb3.jpg" // Placeholder image path
@@ -173,7 +186,7 @@ const projectData = [
     role: "Hardware & Software Developer",
     githubLink: "#", // Placeholder for GitHub link
     liveLink: "#", // Placeholder for live demo
-    icon: FaCode,
+    icon: "FaCode",
     color: "from-pink-500 to-rose-500",
     features: ["Sign Language Translation", "Sensor Integration", "Real-time Processing", "Accessibility", "Hardware-Software Integration"],
     image: "/thumb4.jpg" // Placeholder image path
@@ -206,27 +219,27 @@ const Work = () => {
       <div className="container mx-auto px-4">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <motion.h2
-            variants={fadeIn("up", 0.2)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
+            <motion.h2
+              variants={fadeIn("up", 0.2)}
+              initial="hidden"
+              animate="show"
+              exit="hidden"
             className="h2 mb-6"
-          >
+            >
             Featured <span className="text-accent">Projects</span>
-          </motion.h2>
-          <motion.p
-            variants={fadeIn("up", 0.4)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
+            </motion.h2>
+            <motion.p
+              variants={fadeIn("up", 0.4)}
+              initial="hidden"
+              animate="show"
+              exit="hidden"
             className="max-w-[600px] mx-auto text-lg text-white/80 leading-relaxed"
-          >
+            >
             A showcase of my diverse project portfolio spanning research, web development, 
             government systems, healthcare, and assistive technology. Each project demonstrates 
             my expertise in different technologies and domains.
-          </motion.p>
-        </div>
+            </motion.p>
+          </div>
 
         {/* Category Filter */}
         <motion.div
@@ -305,7 +318,7 @@ const Work = () => {
                    {/* Header */}
                    <div className="flex items-start justify-between mb-4">
                      <div className={`w-12 h-12 bg-gradient-to-br ${project.color} rounded-lg flex items-center justify-center flex-shrink-0`}>
-                       <project.icon className="text-xl text-white" />
+                       {React.createElement(iconMap[project.icon], { className: "text-xl text-white" })}
                      </div>
                    </div>
 
@@ -402,11 +415,11 @@ const Work = () => {
         </motion.div>
 
         {/* Call to Action */}
-        <motion.div
+          <motion.div
           variants={fadeIn("up", 1.2)}
-          initial="hidden"
-          animate="show"
-          exit="hidden"
+            initial="hidden"
+            animate="show"
+            exit="hidden"
           className="text-center mt-16"
         >
           <div className="bg-gradient-to-r from-accent/10 to-blue-500/10 rounded-xl p-8 border border-accent/20">
@@ -425,7 +438,7 @@ const Work = () => {
               Start a Project
             </motion.button>
           </div>
-        </motion.div>
+          </motion.div>
       </div>
 
       {/* Project Detail Modal */}
@@ -481,8 +494,8 @@ const Work = () => {
                   <FaExternalLinkAlt />
                   Live Demo
                 </button>
-              </div>
-            </div>
+        </div>
+      </div>
           </motion.div>
         </motion.div>
       )}

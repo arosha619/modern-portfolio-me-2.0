@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import {
@@ -39,10 +40,38 @@ import Bulb from "../../components/Bulb";
 import Circles from "../../components/Circles";
 import { fadeIn } from "../../variants";
 
+// Icon mapping for server-side compatibility
+const iconMap = {
+  FaCode,
+  FaReact,
+  FaServer,
+  FaDatabase,
+  FaCogs,
+  FaCloud,
+  FaMobile,
+  FaPalette,
+  FaShieldAlt,
+  FaRocket,
+  FaUsers,
+  FaGlobe,
+  SiNextdotjs,
+  SiNestjs,
+  SiTypescript,
+  SiTailwindcss,
+  SiMongodb,
+  SiPostgresql,
+  SiMysql,
+  SiFirebase,
+  SiGraphql,
+  SiJenkins,
+  SiGithub,
+  SiFigma,
+};
+
 // Comprehensive services based on actual skills and experience
 const serviceData = [
   {
-    icon: FaCode,
+    icon: "FaCode",
     title: "Full-Stack Development",
     description: "Complete web applications from frontend to backend using React, Next.js, Node.js, and NestJS. End-to-end solutions with modern technologies.",
     features: ["React & Next.js", "Node.js & NestJS", "TypeScript", "REST APIs & GraphQL"],
@@ -50,7 +79,7 @@ const serviceData = [
     category: "development"
   },
   {
-    icon: FaReact,
+    icon: "FaReact",
     title: "Frontend Development",
     description: "Responsive and interactive user interfaces built with modern frameworks and design systems for optimal user experience.",
     features: ["React & Next.js", "TypeScript", "Tailwind CSS", "Material UI"],
@@ -58,7 +87,7 @@ const serviceData = [
     category: "frontend"
   },
   {
-    icon: FaServer,
+    icon: "FaServer",
     title: "Backend Development",
     description: "Robust server-side applications, APIs, and microservices with scalable architecture and database integration.",
     features: ["Node.js & NestJS", "Express.js", "GraphQL", "Database Design"],
@@ -66,7 +95,7 @@ const serviceData = [
     category: "backend"
   },
   {
-    icon: FaDatabase,
+    icon: "FaDatabase",
     title: "Database Solutions",
     description: "Database design, optimization, and management across multiple platforms with data modeling and migration expertise.",
     features: ["MySQL & PostgreSQL", "MongoDB", "Database Design", "Data Migration"],
@@ -74,7 +103,7 @@ const serviceData = [
     category: "database"
   },
   {
-    icon: FaCogs,
+    icon: "FaCogs",
     title: "DevOps & CI/CD",
     description: "Automated deployment pipelines, containerization, and infrastructure management for scalable applications.",
     features: ["Docker & Kubernetes", "GitHub Actions", "Jenkins", "AWS"],
@@ -82,7 +111,7 @@ const serviceData = [
     category: "devops"
   },
   {
-    icon: FaCloud,
+    icon: "FaCloud",
     title: "Cloud Services",
     description: "Cloud infrastructure setup, deployment, and management using AWS, Firebase, and other cloud platforms.",
     features: ["AWS Services", "Firebase", "Cloud Deployment", "Serverless"],
@@ -90,7 +119,7 @@ const serviceData = [
     category: "cloud"
   },
   {
-    icon: FaMobile,
+    icon: "FaMobile",
     title: "Mobile Development",
     description: "Cross-platform mobile applications using React Native and hybrid development approaches.",
     features: ["React Native", "WebView Apps", "Mobile UI/UX", "App Deployment"],
@@ -98,7 +127,7 @@ const serviceData = [
     category: "mobile"
   },
   {
-    icon: FaPalette,
+    icon: "FaPalette",
     title: "UI/UX Design",
     description: "User interface design and user experience optimization using modern design tools and best practices.",
     features: ["Figma Design", "Responsive Design", "User Research", "Prototyping"],
@@ -106,7 +135,7 @@ const serviceData = [
     category: "design"
   },
   {
-    icon: FaShieldAlt,
+    icon: "FaShieldAlt",
     title: "Security & Authentication",
     description: "Secure authentication systems, OAuth integration, and application security best practices implementation.",
     features: ["OAuth Integration", "JWT Tokens", "Security Best Practices", "Data Protection"],
@@ -114,7 +143,7 @@ const serviceData = [
     category: "security"
   },
   {
-    icon: FaRocket,
+    icon: "FaRocket",
     title: "Performance Optimization",
     description: "Application performance optimization, SEO improvements, and speed enhancement for better user experience.",
     features: ["SEO Optimization", "Performance Tuning", "Caching", "CDN Setup"],
@@ -122,7 +151,7 @@ const serviceData = [
     category: "optimization"
   },
   {
-    icon: FaUsers,
+    icon: "FaUsers",
     title: "Team Collaboration",
     description: "Agile development practices, code reviews, and collaborative development workflows for team projects.",
     features: ["Agile Methodologies", "Code Reviews", "Git Workflows", "Team Leadership"],
@@ -130,7 +159,7 @@ const serviceData = [
     category: "collaboration"
   },
   {
-    icon: FaGlobe,
+    icon: "FaGlobe",
     title: "International Projects",
     description: "Experience working with international teams and clients, providing global development solutions.",
     features: ["Remote Collaboration", "International Teams", "Cross-cultural Communication", "Global Deployment"],
@@ -166,27 +195,27 @@ const Services = () => {
       <div className="container mx-auto px-4">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <motion.h2
-            variants={fadeIn("up", 0.2)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
+            <motion.h2
+              variants={fadeIn("up", 0.2)}
+              initial="hidden"
+              animate="show"
+              exit="hidden"
             className="h2 mb-6"
-          >
+            >
             Professional <span className="text-accent">Services</span>
-          </motion.h2>
-          <motion.p
-            variants={fadeIn("up", 0.4)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
+            </motion.h2>
+            <motion.p
+              variants={fadeIn("up", 0.4)}
+              initial="hidden"
+              animate="show"
+              exit="hidden"
             className="max-w-[600px] mx-auto text-lg text-white/80 leading-relaxed"
-          >
+            >
             Comprehensive software development services tailored to your needs. 
             From concept to deployment, I deliver scalable solutions using modern technologies 
             and best practices for businesses and individuals worldwide.
-          </motion.p>
-        </div>
+            </motion.p>
+          </div>
 
         {/* Category Filter */}
         <motion.div
@@ -241,7 +270,7 @@ const Services = () => {
                 
                 {/* Icon */}
                 <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <service.icon className="text-2xl text-white" />
+                  {React.createElement(iconMap[service.icon], { className: "text-2xl text-white" })}
                 </div>
 
                 {/* Title */}
@@ -282,11 +311,11 @@ const Services = () => {
         </motion.div>
 
         {/* Call to Action */}
-        <motion.div
+          <motion.div
           variants={fadeIn("up", 1.0)}
-          initial="hidden"
-          animate="show"
-          exit="hidden"
+            initial="hidden"
+            animate="show"
+            exit="hidden"
           className="text-center mt-16"
         >
           <div className="bg-gradient-to-r from-accent/10 to-blue-500/10 rounded-xl p-8 border border-accent/20">
@@ -305,8 +334,8 @@ const Services = () => {
               Get In Touch
             </motion.button>
           </div>
-        </motion.div>
-      </div>
+          </motion.div>
+        </div>
     </div>
   );
 };
