@@ -16,6 +16,22 @@ import {
   FaAws,
   FaBriefcase,
   FaGraduationCap,
+  FaCode,
+  FaServer,
+  FaDatabase,
+  FaMobile,
+  FaCloud,
+  FaCogs,
+  FaRocket,
+  FaPalette,
+  FaShieldAlt,
+  FaChartLine,
+  FaUsers,
+  FaGlobe,
+  FaGithub,
+  FaExternalLinkAlt,
+  FaPython,
+  FaJava,
 } from "react-icons/fa";
 import {
   SiAdobephotoshop,
@@ -34,6 +50,14 @@ import {
   SiElasticsearch,
   SiAlgolia,
   SiTypescript,
+  SiSpringboot,
+  SiMysql,
+  SiMongodb,
+  SiVite,
+  SiBootstrap,
+  SiMaven,
+  SiExpress,
+  SiC,
 } from "react-icons/si";
 
 import Circles from "../../components/Circles";
@@ -153,11 +177,11 @@ const skillCategories = [
   {
     title: "Programming Languages",
     skills: [
-      { name: "Java", icon: FaJs, level: 4 },
+      { name: "Java", icon: FaJava, level: 4 },
       { name: "JavaScript", icon: FaJs, level: 5 },
-      { name: "Python", icon: FaJs, level: 4 },
-      { name: "C", icon: FaJs, level: 3 },
-      { name: "C#", icon: FaJs, level: 3 },
+      { name: "Python", icon: FaPython, level: 4 },
+      { name: "C", icon: SiC, level: 3 },
+      { name: "C#", icon: FaCode, level: 3 },
     ],
   },
   {
@@ -168,7 +192,7 @@ const skillCategories = [
       { name: "TypeScript", icon: SiTypescript, level: 4 },
       { name: "HTML", icon: FaHtml5, level: 5 },
       { name: "CSS", icon: FaCss3, level: 5 },
-      { name: "Bootstrap", icon: FaCss3, level: 4 },
+      { name: "Bootstrap", icon: SiBootstrap, level: 4 },
       { name: "Material UI", icon: FaReact, level: 4 },
       { name: "Tailwind CSS", icon: SiTailwindcss, level: 5 },
     ],
@@ -178,57 +202,57 @@ const skillCategories = [
     skills: [
       { name: "Nest.js", icon: SiNestjs, level: 4 },
       { name: "Node.js", icon: FaNodeJs, level: 5 },
-      { name: "ExpressJS", icon: FaNodeJs, level: 4 },
-      { name: "Spring Boot", icon: FaJs, level: 3 },
+      { name: "ExpressJS", icon: SiExpress, level: 4 },
+      { name: "Spring Boot", icon: SiSpringboot, level: 3 },
       { name: "GraphQL", icon: SiGraphql, level: 3 },
     ],
   },
   {
     title: "DevOps & CI/CD",
     skills: [
-      { name: "Git/GitHub", icon: FaJs, level: 5 },
-      { name: "GitHub Actions", icon: FaJs, level: 4 },
+      { name: "Git/GitHub", icon: FaGithub, level: 5 },
+      { name: "GitHub Actions", icon: FaGithub, level: 4 },
       { name: "Docker", icon: FaDocker, level: 4 },
-      { name: "Jenkins", icon: FaJs, level: 3 },
-      { name: "SonarQube", icon: FaJs, level: 3 },
+      { name: "Jenkins", icon: FaServer, level: 3 },
+      { name: "SonarQube", icon: FaShieldAlt, level: 3 },
     ],
   },
   {
     title: "Testing & Tools",
     skills: [
-      { name: "Postman", icon: FaJs, level: 4 },
-      { name: "JUnit", icon: FaJs, level: 3 },
+      { name: "Postman", icon: FaCode, level: 4 },
+      { name: "JUnit", icon: FaCode, level: 3 },
     ],
   },
   {
     title: "Cloud Platforms",
     skills: [
       { name: "AWS", icon: FaAws, level: 4 },
-      { name: "Firebase", icon: FaJs, level: 4 },
+      { name: "Firebase", icon: FaCloud, level: 4 },
     ],
   },
   {
     title: "Operating Systems",
     skills: [
-      { name: "Windows", icon: FaJs, level: 5 },
-      { name: "Linux", icon: FaJs, level: 4 },
+      { name: "Windows", icon: FaServer, level: 5 },
+      { name: "Linux", icon: FaServer, level: 4 },
     ],
   },
   {
     title: "Databases",
     skills: [
-      { name: "MySQL", icon: FaJs, level: 4 },
-      { name: "MSSQL", icon: FaJs, level: 3 },
-      { name: "MongoDB", icon: FaJs, level: 4 },
-      { name: "PostgreSQL", icon: FaJs, level: 3 },
+      { name: "MySQL", icon: SiMysql, level: 4 },
+      { name: "MSSQL", icon: FaDatabase, level: 3 },
+      { name: "MongoDB", icon: SiMongodb, level: 4 },
+      { name: "PostgreSQL", icon: FaDatabase, level: 3 },
     ],
   },
   {
     title: "Other Tools",
     skills: [
       { name: "Figma", icon: FaFigma, level: 4 },
-      { name: "Jira", icon: FaJs, level: 4 },
-      { name: "Clickup", icon: FaJs, level: 3 },
+      { name: "Jira", icon: FaUsers, level: 4 },
+      { name: "Clickup", icon: FaUsers, level: 3 },
     ],
   },
 ];
