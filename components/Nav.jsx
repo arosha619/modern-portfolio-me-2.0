@@ -68,10 +68,7 @@ const Nav = () => {
           </Link>
         ))}
       </div>
-      {/* Fiverr text - only visible on desktop */}
-      <div className="hidden xl:flex text-sm text-gray-400 absolute bottom-4">
-        fiverr.
-      </div>
+
     </nav>
   );
 };

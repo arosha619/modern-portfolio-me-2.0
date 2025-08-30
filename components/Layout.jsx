@@ -22,13 +22,13 @@ const Layout = ({ children }) => {
         <title>Arosha Sandaruwan</title>
         <meta
           name="description"
-          content="Ethan Smith is a Full-stack web developer with 10+ years of experience."
+          content="Arosha Sandaruwan is a Software Engineer and Full-Stack Developer with expertise in React, Next.js, and modern web technologies."
         />
         <meta
           name="keywords"
           content="react, next, nextjs, html, css, javascript, js, modern-ui, modern-ux, portfolio, framer-motion, 3d-website, particle-effect"
         />
-        <meta name="author" content="Sanidhya Kumar Verma" />
+        <meta name="author" content="Arosha Sandaruwan" />
         <meta name="theme-color" content="#f13024" />
       </Head>
 
