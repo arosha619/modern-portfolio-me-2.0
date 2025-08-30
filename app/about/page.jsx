@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import CountUp from "react-countup";
@@ -172,87 +173,119 @@ const dynamicSkills = [
   "Cloud & Database"
 ];
 
+// Icon mapping for server-side compatibility
+const iconMap = {
+  FaJava,
+  FaJs,
+  FaPython,
+  SiC,
+  FaCode,
+  FaReact,
+  SiNextdotjs,
+  SiTypescript,
+  FaHtml5,
+  FaCss3,
+  SiBootstrap,
+  SiTailwindcss,
+  SiNestjs,
+  FaNodeJs,
+  SiExpress,
+  SiSpringboot,
+  SiGraphql,
+  FaGithub,
+  FaDocker,
+  FaServer,
+  FaShieldAlt,
+  FaAws,
+  FaCloud,
+  SiMysql,
+  FaDatabase,
+  SiMongodb,
+  FaUsers,
+  FaFigma,
+};
+
 // Skills data structure for new section
 const skillCategories = [
   {
     title: "Programming Languages",
     skills: [
-      { name: "Java", icon: FaJava, level: 4 },
-      { name: "JavaScript", icon: FaJs, level: 5 },
-      { name: "Python", icon: FaPython, level: 4 },
-      { name: "C", icon: SiC, level: 3 },
-      { name: "C#", icon: FaCode, level: 3 },
+      { name: "Java", icon: "FaJava", level: 4 },
+      { name: "JavaScript", icon: "FaJs", level: 5 },
+      { name: "Python", icon: "FaPython", level: 4 },
+      { name: "C", icon: "SiC", level: 3 },
+      { name: "C#", icon: "FaCode", level: 3 },
     ],
   },
   {
     title: "Frontend Development",
     skills: [
-      { name: "React", icon: FaReact, level: 5 },
-      { name: "Next.js", icon: SiNextdotjs, level: 5 },
-      { name: "TypeScript", icon: SiTypescript, level: 4 },
-      { name: "HTML", icon: FaHtml5, level: 5 },
-      { name: "CSS", icon: FaCss3, level: 5 },
-      { name: "Bootstrap", icon: SiBootstrap, level: 4 },
-      { name: "Material UI", icon: FaReact, level: 4 },
-      { name: "Tailwind CSS", icon: SiTailwindcss, level: 5 },
+      { name: "React", icon: "FaReact", level: 5 },
+      { name: "Next.js", icon: "SiNextdotjs", level: 5 },
+      { name: "TypeScript", icon: "SiTypescript", level: 4 },
+      { name: "HTML", icon: "FaHtml5", level: 5 },
+      { name: "CSS", icon: "FaCss3", level: 5 },
+      { name: "Bootstrap", icon: "SiBootstrap", level: 4 },
+      { name: "Material UI", icon: "FaReact", level: 4 },
+      { name: "Tailwind CSS", icon: "SiTailwindcss", level: 5 },
     ],
   },
   {
     title: "Backend Development",
     skills: [
-      { name: "Nest.js", icon: SiNestjs, level: 4 },
-      { name: "Node.js", icon: FaNodeJs, level: 5 },
-      { name: "ExpressJS", icon: SiExpress, level: 4 },
-      { name: "Spring Boot", icon: SiSpringboot, level: 3 },
-      { name: "GraphQL", icon: SiGraphql, level: 3 },
+      { name: "Nest.js", icon: "SiNestjs", level: 4 },
+      { name: "Node.js", icon: "FaNodeJs", level: 5 },
+      { name: "ExpressJS", icon: "SiExpress", level: 4 },
+      { name: "Spring Boot", icon: "SiSpringboot", level: 3 },
+      { name: "GraphQL", icon: "SiGraphql", level: 3 },
     ],
   },
   {
     title: "DevOps & CI/CD",
     skills: [
-      { name: "Git/GitHub", icon: FaGithub, level: 5 },
-      { name: "GitHub Actions", icon: FaGithub, level: 4 },
-      { name: "Docker", icon: FaDocker, level: 4 },
-      { name: "Jenkins", icon: FaServer, level: 3 },
-      { name: "SonarQube", icon: FaShieldAlt, level: 3 },
+      { name: "Git/GitHub", icon: "FaGithub", level: 5 },
+      { name: "GitHub Actions", icon: "FaGithub", level: 4 },
+      { name: "Docker", icon: "FaDocker", level: 4 },
+      { name: "Jenkins", icon: "FaServer", level: 3 },
+      { name: "SonarQube", icon: "FaShieldAlt", level: 3 },
     ],
   },
   {
     title: "Testing & Tools",
     skills: [
-      { name: "Postman", icon: FaCode, level: 4 },
-      { name: "JUnit", icon: FaCode, level: 3 },
+      { name: "Postman", icon: "FaCode", level: 4 },
+      { name: "JUnit", icon: "FaCode", level: 3 },
     ],
   },
   {
     title: "Cloud Platforms",
     skills: [
-      { name: "AWS", icon: FaAws, level: 4 },
-      { name: "Firebase", icon: FaCloud, level: 4 },
+      { name: "AWS", icon: "FaAws", level: 4 },
+      { name: "Firebase", icon: "FaCloud", level: 4 },
     ],
   },
   {
     title: "Operating Systems",
     skills: [
-      { name: "Windows", icon: FaServer, level: 5 },
-      { name: "Linux", icon: FaServer, level: 4 },
+      { name: "Windows", icon: "FaServer", level: 5 },
+      { name: "Linux", icon: "FaServer", level: 4 },
     ],
   },
   {
     title: "Databases",
     skills: [
-      { name: "MySQL", icon: SiMysql, level: 4 },
-      { name: "MSSQL", icon: FaDatabase, level: 3 },
-      { name: "MongoDB", icon: SiMongodb, level: 4 },
-      { name: "PostgreSQL", icon: FaDatabase, level: 3 },
+      { name: "MySQL", icon: "SiMysql", level: 4 },
+      { name: "MSSQL", icon: "FaDatabase", level: 3 },
+      { name: "MongoDB", icon: "SiMongodb", level: 4 },
+      { name: "PostgreSQL", icon: "FaDatabase", level: 3 },
     ],
   },
   {
     title: "Other Tools",
     skills: [
-      { name: "Figma", icon: FaFigma, level: 4 },
-      { name: "Jira", icon: FaUsers, level: 4 },
-      { name: "Clickup", icon: FaUsers, level: 3 },
+      { name: "Figma", icon: "FaFigma", level: 4 },
+      { name: "Jira", icon: "FaUsers", level: 4 },
+      { name: "Clickup", icon: "FaUsers", level: 3 },
     ],
   },
 ];
@@ -378,7 +411,7 @@ const About = () => {
                        <div className="relative bg-black/20 backdrop-blur-sm border border-white/10 rounded-lg p-4 hover:border-accent/30 transition-all duration-300">
                          <div className="flex items-center gap-3 mb-3">
                            <div className="w-10 h-10 bg-gradient-to-br from-accent/20 to-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                             <skill.icon className="text-xl text-gray-200" />
+                             {React.createElement(iconMap[skill.icon], { className: "text-xl text-gray-200" })}
                            </div>
                            <span className="font-semibold text-white text-sm truncate">{skill.name}</span>
                          </div>
