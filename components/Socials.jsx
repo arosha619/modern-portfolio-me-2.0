@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "next/link";
 import {
   FaLinkedinIn,
@@ -7,31 +8,40 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 
+// Icon mapping for server-side compatibility
+const iconMap = {
+  FaLinkedinIn,
+  FaGithub,
+  FaMediumM,
+  FaFacebookF,
+  FaInstagram,
+};
+
 export const socialData = [
   {
     name: "LinkedIn",
     link: "https://linkedin.com",
-    Icon: FaLinkedinIn,
+    Icon: "FaLinkedinIn",
   },
   {
     name: "Github",
     link: "https://github.com",
-    Icon: FaGithub,
+    Icon: "FaGithub",
   },
   {
     name: "Medium",
     link: "https://medium.com",
-    Icon: FaMediumM,
+    Icon: "FaMediumM",
   },
   {
     name: "Facebook",
     link: "https://facebook.com",
-    Icon: FaFacebookF,
+    Icon: "FaFacebookF",
   },
   {
     name: "Instagram",
     link: "https://instagram.com",
-    Icon: FaInstagram,
+    Icon: "FaInstagram",
   },
 ];
 
@@ -49,7 +59,7 @@ const Socials = () => {
             "hover:text-accent transition-all duration-300 rounded-full p-[5px] focus:outline-none focus:ring-2 focus:ring-accent"
           }
         >
-          <social.Icon aria-hidden />
+          {React.createElement(iconMap[social.Icon], { "aria-hidden": true })}
           <span className="sr-only">{social.name}</span>
         </Link>
       ))}

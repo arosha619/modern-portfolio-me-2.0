@@ -1,3 +1,4 @@
+import React from "react";
 import {
   RxCrop,
   RxPencil2,
@@ -13,29 +14,39 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 
+// Icon mapping for server-side compatibility
+const iconMap = {
+  RxCrop,
+  RxPencil2,
+  RxDesktop,
+  RxReader,
+  RxRocket,
+  RxArrowTopRight,
+};
+
 const serviceData = [
   {
-    Icon: RxCrop,
+    Icon: "RxCrop",
     title: "Branding",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
-    Icon: RxPencil2,
+    Icon: "RxPencil2",
     title: "Design",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
-    Icon: RxDesktop,
+    Icon: "RxDesktop",
     title: "Development",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
-    Icon: RxReader,
+    Icon: "RxReader",
     title: "Copywriting",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
-    Icon: RxRocket,
+    Icon: "RxRocket",
     title: "SEO",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
@@ -66,7 +77,7 @@ const ServiceSlider = () => {
           <div className="bg-[rgba(65,47,123,0.15)] h-max rounded-lg px-6 py-8 flex sm:flex-col gap-x-6 sm:gap-x-0 group cursor-pointer hover:bg-[rgba(89,65,169,0.15)] transition-all duration-300">
             {/* icon */}
             <div className="text-4xl text-accent mb-4">
-              <item.Icon aria-hidden />
+              {React.createElement(iconMap[item.Icon], { "aria-hidden": true })}
             </div>
 
             {/* title & description */}

@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
 import { BsArrowRight } from "react-icons/bs";
 import { FiMail, FiMapPin } from "react-icons/fi";
@@ -7,23 +8,33 @@ import { FaGithub, FaLinkedin, FaMedium, FaCalendarAlt } from "react-icons/fa";
 import { fadeIn } from "../../variants";
 import { useState } from "react";
 
+// Icon mapping for server-side compatibility
+const iconMap = {
+  FiMail,
+  FaCalendarAlt,
+  FiMapPin,
+  FaGithub,
+  FaLinkedin,
+  FaMedium,
+};
+
 const CONTACTS = [
   {
-    icon: <FiMail className="text-2xl text-accent" />,
+    icon: "FiMail",
     label: "Email",
     value: [
       { text: "aroshsandaruwan619@gmail.com", link: "mailto:aroshsandaruwan619@gmail.com" },
     ],
   },
   {
-    icon: <FaCalendarAlt className="text-2xl text-accent" />,
+    icon: "FaCalendarAlt",
     label: "Phone",
     value: [
       { text: "(+94) 76 23 56 027", link: "tel:+94762356027" },
     ],
   },
   {
-    icon: <FiMapPin className="text-2xl text-accent" />,
+    icon: "FiMapPin",
     label: "Location",
     value: [
       { text: "Sri Lanka" }
@@ -32,9 +43,9 @@ const CONTACTS = [
 ];
 
 const SOCIALS = [
-  { icon: <FaGithub className="text-2xl" />, link: "https://github.com/" },
-  { icon: <FaLinkedin className="text-2xl" />, link: "https://linkedin.com/" },
-  { icon: <FaMedium className="text-2xl" />, link: "https://medium.com/" },
+  { icon: "FaGithub", link: "https://github.com/" },
+  { icon: "FaLinkedin", link: "https://linkedin.com/" },
+  { icon: "FaMedium", link: "https://medium.com/" },
 ];
 
 const Contact = () => {
@@ -84,7 +95,7 @@ const Contact = () => {
                     whileHover={{ scale: 1.15, rotate: -8 }}
                     className="bg-accent/10 rounded-xl p-3 flex items-center justify-center min-w-[48px] min-h-[48px] text-accent shadow-md transition-transform duration-200"
                   >
-                    {item.icon}
+                    {React.createElement(iconMap[item.icon], { className: "text-2xl text-accent" })}
                   </motion.div>
                   <div>
                     <div className="text-xs text-gray-400 font-semibold uppercase mb-1 tracking-wide letter-spacing-wider">{item.label}</div>
@@ -113,7 +124,7 @@ const Contact = () => {
                   className="bg-white/10 hover:bg-accent/20 transition rounded-full w-12 h-12 flex items-center justify-center shadow-md border border-white/10 text-accent hover:text-white"
                   style={{ transition: 'all 0.2s' }}
                 >
-                  {s.icon}
+                  {React.createElement(iconMap[s.icon], { className: "text-2xl" })}
                 </motion.a>
               ))}
             </div>

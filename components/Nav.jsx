@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -11,21 +12,31 @@ import {
   HiEnvelope,
 } from "react-icons/hi2";
 
+// Icon mapping for server-side compatibility
+const iconMap = {
+  HiHome,
+  HiUser,
+  HiViewColumns,
+  HiRectangleGroup,
+  HiChatBubbleBottomCenterText,
+  HiEnvelope,
+};
+
 // nav data
 export const navData = [
-  { name: "home", path: "/", Icon: HiHome },
-  { name: "about", path: "/about", Icon: HiUser },
-  { name: "services", path: "/services", Icon: HiRectangleGroup },
-  { name: "work", path: "/work", Icon: HiViewColumns },
+  { name: "home", path: "/", Icon: "HiHome" },
+  { name: "about", path: "/about", Icon: "HiUser" },
+  { name: "services", path: "/services", Icon: "HiRectangleGroup" },
+  { name: "work", path: "/work", Icon: "HiViewColumns" },
   // {
   //   name: "testimonials",
   //   path: "/testimonials",
-  //   Icon: HiChatBubbleBottomCenterText,
+  //   Icon: "HiChatBubbleBottomCenterText",
   // },
   {
     name: "contact",
     path: "/contact",
-    Icon: HiEnvelope,
+    Icon: "HiEnvelope",
   },
 ];
 
@@ -63,7 +74,7 @@ const Nav = () => {
 
             {/* icon */}
             <div>
-              <link.Icon aria-hidden />
+              {React.createElement(iconMap[link.Icon], { "aria-hidden": true })}
             </div>
           </Link>
         ))}
