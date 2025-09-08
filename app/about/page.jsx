@@ -114,9 +114,16 @@ export const aboutData = [
           "Migrated video service from Twilio to Agora",
           "Built secure Google OAuth authentication with NextAuth",
           "Improved SEO performance in Next.js app",
-          "Created cross-platform mobile app with React Native WebView"
+          "Created cross-platform mobile app with React Native WebView",
         ],
-        technologies: ["Next.js", "NestJS", "TypeScript", "GraphQL", "Tailwind CSS", "Firebase"]
+        technologies: [
+          "Next.js",
+          "NestJS",
+          "TypeScript",
+          "GraphQL",
+          "Tailwind CSS",
+          "Firebase",
+        ],
       },
       {
         title: "Associate Software Engineer",
@@ -127,9 +134,9 @@ export const aboutData = [
           "Developed seamless and responsive frontends",
           "Built robust and efficient backends",
           "Researched and implemented DevOps practices",
-          "Integrated CI/CD pipelines for deployment efficiency"
+          "Integrated CI/CD pipelines for deployment efficiency",
         ],
-        technologies: ["React", "Node.js", "MySQL", "AWS", "GitHub Actions"]
+        technologies: ["React", "Node.js", "MySQL", "AWS", "GitHub Actions"],
       },
       {
         title: "Trainee Software Engineer",
@@ -140,9 +147,16 @@ export const aboutData = [
           "Followed best practices for Frontend and Backend Development",
           "Integrated REST APIs for seamless data communication",
           "Applied Agile methodologies to enhance project efficiency",
-          "Tested & Fixed bugs to ensure application stability"
+          "Tested & Fixed bugs to ensure application stability",
         ],
-        technologies: ["React", "Node.js", "ExpressJS", "MySQL", "Firebase", "Android"]
+        technologies: [
+          "React",
+          "Node.js",
+          "ExpressJS",
+          "MySQL",
+          "Firebase",
+          "Android",
+        ],
       },
     ],
   },
@@ -152,14 +166,16 @@ export const aboutData = [
       {
         title: "B.Sc. (Hons) in Information Technology",
         stage: "2024",
-        institution: "Faculty of Information Technology, University of Moratuwa",
+        institution:
+          "Faculty of Information Technology, University of Moratuwa",
         details: "Bachelor's degree with honors in Information Technology",
       },
       {
         title: "G.C.E Advanced Level - Physical Science Stream",
         stage: "2018",
         institution: "Peradeniya Central College",
-        details: "1 'A', 2 'B's - ('A' for Combined Mathematics) | Z-Score: 1.5544",
+        details:
+          "1 'A', 2 'B's - ('A' for Combined Mathematics) | Z-Score: 1.5544",
       },
     ],
   },
@@ -170,7 +186,7 @@ const dynamicSkills = [
   "React & Next.js",
   "Node.js & NestJS",
   "DevOps & CI/CD",
-  "Cloud & Database"
+  "Cloud & Database",
 ];
 
 // Icon mapping for server-side compatibility
@@ -302,7 +318,9 @@ const SkillBar = ({ level }) => (
     {[...Array(5)].map((_, i) => (
       <div
         key={i}
-        className={`h-2 w-5 rounded-sm ${i < level ? 'bg-blue-500' : 'bg-gray-700'}`}
+        className={`h-2 w-5 rounded-sm ${
+          i < level ? "bg-blue-500" : "bg-gray-700"
+        }`}
       />
     ))}
   </div>
@@ -333,7 +351,8 @@ const About = () => {
           exit="hidden"
           className="h2 text-center"
         >
-          Transforming <span className="text-accent">ideas</span> into exceptional digital experiences.
+          Transforming <span className="text-accent">ideas</span> into
+          exceptional digital experiences.
         </motion.h2>
         <motion.p
           variants={fadeIn("right", 0.4)}
@@ -341,9 +360,11 @@ const About = () => {
           animate="show"
           className="max-w-[600px] mb-6 xl:mb-8 px-4 xl:px-0 text-center"
         >
-          A passionate Software Engineer with expertise in full-stack development, specializing in React, Next.js, and Node.js. 
-          From Sri Lanka to South Korea, I've built scalable applications and collaborated with international teams to deliver 
-          innovative solutions that drive business growth and user satisfaction.
+          A passionate Software Engineer with expertise in full-stack
+          development, specializing in React, Next.js, and Node.js. From Sri
+          Lanka to South Korea, I've built scalable applications and
+          collaborated with international teams to deliver innovative solutions
+          that drive business growth and user satisfaction.
         </motion.p>
       </div>
 
@@ -373,13 +394,13 @@ const About = () => {
               } cursor-pointer capitalize text-lg xl:text-xl 2xl:text-2xl font-semibold relative after:w-12 after:h-[3px] after:bg-white after:absolute after:-bottom-2 after:left-0 hover:text-accent/80 transition-all duration-300`}
               onClick={() => setIndex(itemI)}
             >
-              {item.title === 'credentials' ? 'Education' : item.title}
+              {item.title === "credentials" ? "Education" : item.title}
             </div>
           ))}
         </div>
-                 {/* Enhanced Skills Section for Skills Tab */}
+        {/* Enhanced Skills Section for Skills Tab */}
         {index === 0 ? (
-           <div className="w-full max-w-7xl bg-white/5 rounded-lg p-8 flex flex-col gap-12">
+          <div className="w-full max-w-7xl bg-white/5 rounded-lg p-8 flex flex-col gap-12">
             {skillCategories.map((cat, catIdx) => (
               <motion.div
                 key={cat.title}
@@ -389,96 +410,109 @@ const About = () => {
                 transition={{ duration: 0.5, delay: catIdx * 0.1 }}
                 className="w-full"
               >
-                 {/* Category Header */}
-                 <div className="flex items-center mb-6">
-                   <div className="border-l-4 border-l-accent h-8 mr-4" />
-                   <h4 className="text-xl font-bold text-white">{cat.title}</h4>
+                {/* Category Header */}
+                <div className="flex items-center mb-6">
+                  <div className="border-l-4 border-l-accent h-8 mr-4" />
+                  <h4 className="text-xl font-bold text-white">{cat.title}</h4>
                 </div>
-                 
-                 {/* Skills Grid */}
-                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
+
+                {/* Skills Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
                   {cat.skills.map((skill, skillIdx) => (
                     <motion.div
                       key={skill.name}
-                       initial={{ opacity: 0, y: 20 }}
-                       whileInView={{ opacity: 1, y: 0 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, amount: 0.2 }}
                       transition={{ duration: 0.4, delay: skillIdx * 0.05 }}
-                       whileHover={{ 
-                         scale: 1.02,
-                         transition: { duration: 0.2 }
-                       }}
-                       className="group relative"
-                     >
-                       {/* Card Background */}
-                       <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-blue-500/5 rounded-lg blur-sm group-hover:blur-md transition-all duration-300" />
-                       
-                       {/* Main Card */}
-                       <div className="relative bg-black/20 backdrop-blur-sm border border-white/10 rounded-lg p-4 hover:border-accent/30 transition-all duration-300">
-                         <div className="flex items-center gap-3 mb-3">
-                           <div className="w-10 h-10 bg-gradient-to-br from-accent/20 to-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                             {React.createElement(iconMap[skill.icon], { className: "text-xl text-gray-200" })}
-                           </div>
-                           <span className="font-semibold text-white text-sm truncate">{skill.name}</span>
-                         </div>
-                         
-                         {/* Skill Level */}
-                         <div className="flex items-center justify-between">
-                           <span className="text-xs text-gray-400">Proficiency</span>
-                           <span className="text-xs text-accent font-medium">{skill.level}/5</span>
-                         </div>
-                         
-                         {/* Progress Bar */}
-                         <div className="mt-2 w-full bg-gray-700 rounded-full h-2">
-                           <motion.div
-                             initial={{ width: 0 }}
-                             whileInView={{ width: `${(skill.level / 5) * 100}%` }}
-                             viewport={{ once: true }}
-                             transition={{ duration: 1, delay: skillIdx * 0.1 }}
-                             className="bg-gradient-to-r from-accent to-blue-500 h-2 rounded-full"
-                           />
-                         </div>
+                      whileHover={{
+                        scale: 1.02,
+                        transition: { duration: 0.2 },
+                      }}
+                      className="group relative"
+                    >
+                      {/* Card Background */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-blue-500/5 rounded-lg blur-sm group-hover:blur-md transition-all duration-300" />
+
+                      {/* Main Card */}
+                      <div className="relative bg-black/20 backdrop-blur-sm border border-white/10 rounded-lg p-4 hover:border-accent/30 transition-all duration-300">
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="w-10 h-10 bg-gradient-to-br from-accent/20 to-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                            {React.createElement(iconMap[skill.icon], {
+                              className: "text-xl text-gray-200",
+                            })}
+                          </div>
+                          <span className="font-semibold text-white text-sm truncate">
+                            {skill.name}
+                          </span>
+                        </div>
+
+                        {/* Skill Level */}
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs text-gray-400">
+                            Proficiency
+                          </span>
+                          <span className="text-xs text-accent font-medium">
+                            {skill.level}/5
+                          </span>
+                        </div>
+
+                        {/* Progress Bar */}
+                        <div className="mt-2 w-full bg-gray-700 rounded-full h-2">
+                          <motion.div
+                            initial={{ width: 0 }}
+                            whileInView={{
+                              width: `${(skill.level / 5) * 100}%`,
+                            }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1, delay: skillIdx * 0.1 }}
+                            className="bg-gradient-to-r from-accent to-blue-500 h-2 rounded-full"
+                          />
+                        </div>
                       </div>
                     </motion.div>
                   ))}
                 </div>
               </motion.div>
             ))}
-             
-             {/* Skills Summary */}
-             <motion.div
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ duration: 0.6, delay: 0.5 }}
-               className="mt-8 p-6 bg-gradient-to-r from-accent/10 to-blue-500/10 rounded-lg border border-accent/20"
-             >
-               <div className="flex items-center gap-3 mb-3">
-                 <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center">
-                   <span className="text-white text-sm font-bold">⚡</span>
-                 </div>
-                 <h4 className="text-white font-semibold text-lg">Technical Expertise</h4>
-               </div>
-               <p className="text-white/80 text-sm leading-relaxed">
-                 Comprehensive full-stack development skills with expertise in modern web technologies, 
-                 cloud platforms, and DevOps practices. Experienced in building scalable applications 
-                 and collaborating with international teams across diverse technology stacks.
-               </p>
-             </motion.div>
+
+            {/* Skills Summary */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="mt-8 p-6 bg-gradient-to-r from-accent/10 to-blue-500/10 rounded-lg border border-accent/20"
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center">
+                  <span className="text-white text-sm font-bold">⚡</span>
+                </div>
+                <h4 className="text-white font-semibold text-lg">
+                  Technical Expertise
+                </h4>
+              </div>
+              <p className="text-white/80 text-sm leading-relaxed">
+                Comprehensive full-stack development skills with expertise in
+                modern web technologies, cloud platforms, and DevOps practices.
+                Experienced in building scalable applications and collaborating
+                with international teams across diverse technology stacks.
+              </p>
+            </motion.div>
           </div>
         ) : index === 1 ? (
           // Enhanced Experience Section
           <div className="w-full max-w-6xl bg-white/5 rounded-lg p-8 flex flex-col gap-8">
-            <motion.h3 
+            <motion.h3
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               className="text-2xl font-bold text-accent mb-6 flex items-center gap-3"
             >
-              <FaBriefcase className="text-accent text-3xl" /> 
+              <FaBriefcase className="text-accent text-3xl" />
               Professional Journey
             </motion.h3>
-            
+
             <div className="space-y-8">
               {aboutTabs[index].info.map((item, itemI) => (
                 <motion.div
@@ -486,18 +520,17 @@ const About = () => {
                   initial={{ opacity: 0, x: -50, y: 30 }}
                   animate={{ opacity: 1, x: 0, y: 0 }}
                   transition={{ duration: 0.8, delay: itemI * 0.2 }}
-                  whileHover={{ 
+                  whileHover={{
                     scale: 1.02,
-                    transition: { duration: 0.3 }
+                    transition: { duration: 0.3 },
                   }}
                   className="relative group"
                 >
                   {/* Card Background with Gradient */}
                   <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-blue-500/10 rounded-xl blur-sm group-hover:blur-md transition-all duration-300" />
-                  
+
                   {/* Main Card */}
                   <div className="relative bg-black/30 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-accent/50 transition-all duration-300">
-                    
                     {/* Header Section */}
                     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6 gap-4">
                       <div className="flex items-start gap-4">
@@ -505,19 +538,21 @@ const About = () => {
                         <div className="w-14 h-14 bg-gradient-to-br from-accent to-green-500 rounded-full flex items-center justify-center flex-shrink-0">
                           <FaBriefcase className="text-white text-xl" />
                         </div>
-                        
-                  <div className="flex-1">
+
+                        <div className="flex-1">
                           <h4 className="text-xl font-bold text-white group-hover:text-accent transition-colors duration-300 mb-1">
                             {item.title}
                           </h4>
                           <div className="flex items-center gap-2 text-blue-300 font-medium">
                             <span>{item.company}</span>
                             <span className="text-gray-400">•</span>
-                            <span className="text-gray-400">{item.location}</span>
+                            <span className="text-gray-400">
+                              {item.location}
+                            </span>
                           </div>
                         </div>
                       </div>
-                      
+
                       {/* Duration Badge */}
                       <motion.div
                         initial={{ scale: 0 }}
@@ -525,10 +560,12 @@ const About = () => {
                         transition={{ duration: 0.5, delay: itemI * 0.3 + 0.5 }}
                         className="bg-accent/20 border border-accent/30 rounded-full px-4 py-2 flex-shrink-0"
                       >
-                        <span className="text-accent font-bold text-sm">{item.stage}</span>
+                        <span className="text-accent font-bold text-sm">
+                          {item.stage}
+                        </span>
                       </motion.div>
                     </div>
-                    
+
                     {/* Highlights Section */}
                     <div className="mb-6">
                       <h5 className="text-blue-300 font-semibold mb-3 flex items-center gap-2">
@@ -541,16 +578,21 @@ const About = () => {
                             key={highlightIdx}
                             initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.4, delay: itemI * 0.2 + highlightIdx * 0.1 }}
+                            transition={{
+                              duration: 0.4,
+                              delay: itemI * 0.2 + highlightIdx * 0.1,
+                            }}
                             className="flex items-start gap-2"
                           >
                             <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                            <p className="text-white/80 text-sm leading-relaxed">{highlight}</p>
+                            <p className="text-white/80 text-sm leading-relaxed">
+                              {highlight}
+                            </p>
                           </motion.div>
                         ))}
-                  </div>
-                </div>
-                    
+                      </div>
+                    </div>
+
                     {/* Technologies Section */}
                     <div className="mb-4">
                       <h5 className="text-blue-300 font-semibold mb-3 flex items-center gap-2">
@@ -563,20 +605,29 @@ const About = () => {
                             key={tech}
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.3, delay: itemI * 0.2 + techIdx * 0.05 }}
+                            transition={{
+                              duration: 0.3,
+                              delay: itemI * 0.2 + techIdx * 0.05,
+                            }}
                             className="bg-white/10 border border-white/20 rounded-full px-3 py-1 text-xs text-white/90 hover:bg-accent/20 hover:border-accent/30 transition-all duration-200"
                           >
                             {tech}
                           </motion.span>
-              ))}
-            </div>
+                        ))}
+                      </div>
                     </div>
-                    
+
                     {/* Progress Indicator */}
                     <div className="mt-4">
                       <div className="flex justify-between text-xs text-gray-400 mb-1">
                         <span>Experience Level</span>
-                        <span>{itemI === 0 ? "Senior" : itemI === 1 ? "Mid-Level" : "Junior"}</span>
+                        <span>
+                          {itemI === 0
+                            ? "Senior"
+                            : itemI === 1
+                            ? "Mid-Level"
+                            : "Junior"}
+                        </span>
                       </div>
                       <div className="w-full bg-gray-700 rounded-full h-2">
                         <motion.div
@@ -587,7 +638,7 @@ const About = () => {
                         />
                       </div>
                     </div>
-                    
+
                     {/* Decorative Elements */}
                     <div className="absolute top-3 right-3 opacity-20">
                       <div className="w-6 h-6 border border-accent/30 rounded-full" />
@@ -599,7 +650,7 @@ const About = () => {
                 </motion.div>
               ))}
             </div>
-            
+
             {/* Experience Summary */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -614,24 +665,26 @@ const About = () => {
                 <h4 className="text-white font-semibold">Career Growth</h4>
               </div>
               <p className="text-white/80 text-sm">
-                Rapid progression from Trainee to Software Engineer, gaining expertise in full-stack development, 
-                DevOps practices, and international experience. Specialized in modern web technologies and mobile development.
+                Rapid progression from Trainee to Software Engineer, gaining
+                expertise in full-stack development, DevOps practices, and
+                international experience. Specialized in modern web technologies
+                and mobile development.
               </p>
             </motion.div>
           </div>
         ) : (
           // Enhanced Education Section
           <div className="w-full max-w-4xl bg-white/5 rounded-lg p-8 flex flex-col gap-8">
-            <motion.h3 
+            <motion.h3
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               className="text-2xl font-bold text-accent mb-4 flex items-center gap-3"
             >
-              <FaGraduationCap className="text-accent text-3xl" /> 
+              <FaGraduationCap className="text-accent text-3xl" />
               Education Journey
             </motion.h3>
-            
+
             <div className="grid md:grid-cols-2 gap-8">
               {aboutTabs[index].info.map((item, itemI) => (
                 <motion.div
@@ -639,18 +692,17 @@ const About = () => {
                   initial={{ opacity: 0, x: itemI % 2 === 0 ? -50 : 50, y: 30 }}
                   animate={{ opacity: 1, x: 0, y: 0 }}
                   transition={{ duration: 0.8, delay: itemI * 0.2 }}
-                  whileHover={{ 
+                  whileHover={{
                     scale: 1.02,
-                    transition: { duration: 0.3 }
+                    transition: { duration: 0.3 },
                   }}
                   className="relative group"
                 >
                   {/* Card Background with Gradient */}
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-xl blur-sm group-hover:blur-md transition-all duration-300" />
-                  
+
                   {/* Main Card */}
                   <div className="relative bg-black/30 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-accent/50 transition-all duration-300">
-                    
                     {/* Degree Badge */}
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center gap-3">
@@ -664,7 +716,7 @@ const About = () => {
                           <p className="text-sm text-gray-400">{item.stage}</p>
                         </div>
                       </div>
-                      
+
                       {/* Year Badge */}
                       <motion.div
                         initial={{ scale: 0 }}
@@ -672,29 +724,41 @@ const About = () => {
                         transition={{ duration: 0.5, delay: itemI * 0.3 + 0.5 }}
                         className="bg-accent/20 border border-accent/30 rounded-full px-3 py-1"
                       >
-                        <span className="text-accent font-bold text-sm">{item.stage}</span>
+                        <span className="text-accent font-bold text-sm">
+                          {item.stage}
+                        </span>
                       </motion.div>
                     </div>
-                    
+
                     {/* Institution */}
                     <div className="mb-3">
-                      <p className="text-blue-300 font-medium text-sm mb-1">Institution</p>
-                      <p className="text-white/90 text-base">{item.institution}</p>
+                      <p className="text-blue-300 font-medium text-sm mb-1">
+                        Institution
+                      </p>
+                      <p className="text-white/90 text-base">
+                        {item.institution}
+                      </p>
                     </div>
-                    
+
                     {/* Details */}
                     {item.details && (
                       <div className="mb-4">
-                        <p className="text-blue-300 font-medium text-sm mb-1">Details</p>
-                        <p className="text-white/80 text-sm leading-relaxed">{item.details}</p>
+                        <p className="text-blue-300 font-medium text-sm mb-1">
+                          Details
+                        </p>
+                        <p className="text-white/80 text-sm leading-relaxed">
+                          {item.details}
+                        </p>
                       </div>
                     )}
-                    
+
                     {/* Progress Bar for Degree Completion */}
                     <div className="mt-4">
                       <div className="flex justify-between text-xs text-gray-400 mb-1">
                         <span>Progress</span>
-                        <span>{item.stage === "2024" ? "Completed" : "Completed"}</span>
+                        <span>
+                          {item.stage === "2024" ? "Completed" : "Completed"}
+                        </span>
                       </div>
                       <div className="w-full bg-gray-700 rounded-full h-2">
                         <motion.div
@@ -705,19 +769,19 @@ const About = () => {
                         />
                       </div>
                     </div>
-                    
+
                     {/* Decorative Elements */}
                     <div className="absolute top-2 right-2 opacity-20">
                       <div className="w-8 h-8 border border-accent/30 rounded-full" />
                     </div>
                     <div className="absolute bottom-2 left-2 opacity-20">
                       <div className="w-4 h-4 bg-accent/20 rounded-full" />
+                    </div>
                   </div>
-                </div>
                 </motion.div>
               ))}
             </div>
-            
+
             {/* Education Summary */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -729,11 +793,15 @@ const About = () => {
                 <div className="w-6 h-6 bg-accent rounded-full flex items-center justify-center">
                   <span className="text-white text-xs font-bold">✓</span>
                 </div>
-                <h4 className="text-white font-semibold">Academic Excellence</h4>
+                <h4 className="text-white font-semibold">
+                  Academic Excellence
+                </h4>
               </div>
               <p className="text-white/80 text-sm">
-                Strong foundation in Information Technology with honors degree and excellent performance in Advanced Level examinations, 
-                demonstrating consistent academic achievement and technical proficiency.
+                Strong foundation in Information Technology with honors degree
+                and excellent performance in Advanced Level examinations,
+                demonstrating consistent academic achievement and technical
+                proficiency.
               </p>
             </motion.div>
           </div>
@@ -743,4 +811,4 @@ const About = () => {
   );
 };
 
-export default About; 
+export default About;

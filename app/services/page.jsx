@@ -73,99 +73,151 @@ const serviceData = [
   {
     icon: "FaCode",
     title: "Full-Stack Development",
-    description: "Complete web applications from frontend to backend using React, Next.js, Node.js, and NestJS. End-to-end solutions with modern technologies.",
-    features: ["React & Next.js", "Node.js & NestJS", "TypeScript", "REST APIs & GraphQL"],
+    description:
+      "Complete web applications from frontend to backend using React, Next.js, Node.js, and NestJS. End-to-end solutions with modern technologies.",
+    features: [
+      "React & Next.js",
+      "Node.js & NestJS",
+      "TypeScript",
+      "REST APIs & GraphQL",
+    ],
     color: "from-blue-500 to-cyan-500",
-    category: "development"
+    category: "development",
   },
   {
     icon: "FaReact",
     title: "Frontend Development",
-    description: "Responsive and interactive user interfaces built with modern frameworks and design systems for optimal user experience.",
+    description:
+      "Responsive and interactive user interfaces built with modern frameworks and design systems for optimal user experience.",
     features: ["React & Next.js", "TypeScript", "Tailwind CSS", "Material UI"],
     color: "from-purple-500 to-pink-500",
-    category: "frontend"
+    category: "frontend",
   },
   {
     icon: "FaServer",
     title: "Backend Development",
-    description: "Robust server-side applications, APIs, and microservices with scalable architecture and database integration.",
+    description:
+      "Robust server-side applications, APIs, and microservices with scalable architecture and database integration.",
     features: ["Node.js & NestJS", "Express.js", "GraphQL", "Database Design"],
     color: "from-green-500 to-emerald-500",
-    category: "backend"
+    category: "backend",
   },
   {
     icon: "FaDatabase",
     title: "Database Solutions",
-    description: "Database design, optimization, and management across multiple platforms with data modeling and migration expertise.",
-    features: ["MySQL & PostgreSQL", "MongoDB", "Database Design", "Data Migration"],
+    description:
+      "Database design, optimization, and management across multiple platforms with data modeling and migration expertise.",
+    features: [
+      "MySQL & PostgreSQL",
+      "MongoDB",
+      "Database Design",
+      "Data Migration",
+    ],
     color: "from-orange-500 to-red-500",
-    category: "database"
+    category: "database",
   },
   {
     icon: "FaCogs",
     title: "DevOps & CI/CD",
-    description: "Automated deployment pipelines, containerization, and infrastructure management for scalable applications.",
+    description:
+      "Automated deployment pipelines, containerization, and infrastructure management for scalable applications.",
     features: ["Docker & Kubernetes", "GitHub Actions", "Jenkins", "AWS"],
     color: "from-indigo-500 to-purple-500",
-    category: "devops"
+    category: "devops",
   },
   {
     icon: "FaCloud",
     title: "Cloud Services",
-    description: "Cloud infrastructure setup, deployment, and management using AWS, Firebase, and other cloud platforms.",
+    description:
+      "Cloud infrastructure setup, deployment, and management using AWS, Firebase, and other cloud platforms.",
     features: ["AWS Services", "Firebase", "Cloud Deployment", "Serverless"],
     color: "from-yellow-500 to-orange-500",
-    category: "cloud"
+    category: "cloud",
   },
   {
     icon: "FaMobile",
     title: "Mobile Development",
-    description: "Cross-platform mobile applications using React Native and hybrid development approaches.",
-    features: ["React Native", "WebView Apps", "Mobile UI/UX", "App Deployment"],
+    description:
+      "Cross-platform mobile applications using React Native and hybrid development approaches.",
+    features: [
+      "React Native",
+      "WebView Apps",
+      "Mobile UI/UX",
+      "App Deployment",
+    ],
     color: "from-teal-500 to-blue-500",
-    category: "mobile"
+    category: "mobile",
   },
   {
     icon: "FaPalette",
     title: "UI/UX Design",
-    description: "User interface design and user experience optimization using modern design tools and best practices.",
-    features: ["Figma Design", "Responsive Design", "User Research", "Prototyping"],
+    description:
+      "User interface design and user experience optimization using modern design tools and best practices.",
+    features: [
+      "Figma Design",
+      "Responsive Design",
+      "User Research",
+      "Prototyping",
+    ],
     color: "from-pink-500 to-rose-500",
-    category: "design"
+    category: "design",
   },
   {
     icon: "FaShieldAlt",
     title: "Security & Authentication",
-    description: "Secure authentication systems, OAuth integration, and application security best practices implementation.",
-    features: ["OAuth Integration", "JWT Tokens", "Security Best Practices", "Data Protection"],
+    description:
+      "Secure authentication systems, OAuth integration, and application security best practices implementation.",
+    features: [
+      "OAuth Integration",
+      "JWT Tokens",
+      "Security Best Practices",
+      "Data Protection",
+    ],
     color: "from-red-500 to-pink-500",
-    category: "security"
+    category: "security",
   },
   {
     icon: "FaRocket",
     title: "Performance Optimization",
-    description: "Application performance optimization, SEO improvements, and speed enhancement for better user experience.",
-    features: ["SEO Optimization", "Performance Tuning", "Caching", "CDN Setup"],
+    description:
+      "Application performance optimization, SEO improvements, and speed enhancement for better user experience.",
+    features: [
+      "SEO Optimization",
+      "Performance Tuning",
+      "Caching",
+      "CDN Setup",
+    ],
     color: "from-emerald-500 to-green-500",
-    category: "optimization"
+    category: "optimization",
   },
   {
     icon: "FaUsers",
     title: "Team Collaboration",
-    description: "Agile development practices, code reviews, and collaborative development workflows for team projects.",
-    features: ["Agile Methodologies", "Code Reviews", "Git Workflows", "Team Leadership"],
+    description:
+      "Agile development practices, code reviews, and collaborative development workflows for team projects.",
+    features: [
+      "Agile Methodologies",
+      "Code Reviews",
+      "Git Workflows",
+      "Team Leadership",
+    ],
     color: "from-violet-500 to-purple-500",
-    category: "collaboration"
+    category: "collaboration",
   },
   {
     icon: "FaGlobe",
     title: "International Projects",
-    description: "Experience working with international teams and clients, providing global development solutions.",
-    features: ["Remote Collaboration", "International Teams", "Cross-cultural Communication", "Global Deployment"],
+    description:
+      "Experience working with international teams and clients, providing global development solutions.",
+    features: [
+      "Remote Collaboration",
+      "International Teams",
+      "Cross-cultural Communication",
+      "Global Deployment",
+    ],
     color: "from-cyan-500 to-blue-500",
-    category: "international"
-  }
+    category: "international",
+  },
 ];
 
 const Services = () => {
@@ -183,39 +235,41 @@ const Services = () => {
     { id: "design", name: "Design" },
   ];
 
-  const filteredServices = selectedCategory === "all" 
-    ? serviceData 
-    : serviceData.filter(service => service.category === selectedCategory);
+  const filteredServices =
+    selectedCategory === "all"
+      ? serviceData
+      : serviceData.filter((service) => service.category === selectedCategory);
 
   return (
     <div className="min-h-screen bg-primary/30 py-36 flex items-center relative overflow-hidden">
       <Circles />
       <Bulb />
-      
+
       <div className="container mx-auto px-4">
         {/* Header Section */}
         <div className="text-center mb-16">
-            <motion.h2
-              variants={fadeIn("up", 0.2)}
-              initial="hidden"
-              animate="show"
-              exit="hidden"
+          <motion.h2
+            variants={fadeIn("up", 0.2)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
             className="h2 mb-6"
-            >
+          >
             Professional <span className="text-accent">Services</span>
-            </motion.h2>
-            <motion.p
-              variants={fadeIn("up", 0.4)}
-              initial="hidden"
-              animate="show"
-              exit="hidden"
+          </motion.h2>
+          <motion.p
+            variants={fadeIn("up", 0.4)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
             className="max-w-[600px] mx-auto text-lg text-white/80 leading-relaxed"
-            >
-            Comprehensive software development services tailored to your needs. 
-            From concept to deployment, I deliver scalable solutions using modern technologies 
-            and best practices for businesses and individuals worldwide.
-            </motion.p>
-          </div>
+          >
+            Comprehensive software development services tailored to your needs.
+            From concept to deployment, I deliver scalable solutions using
+            modern technologies and best practices for businesses and
+            individuals worldwide.
+          </motion.p>
+        </div>
 
         {/* Category Filter */}
         <motion.div
@@ -254,23 +308,28 @@ const Services = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ 
+              whileHover={{
                 y: -10,
-                transition: { duration: 0.3 }
+                transition: { duration: 0.3 },
               }}
               onHoverStart={() => setHoveredService(index)}
               onHoverEnd={() => setHoveredService(null)}
               className="group relative"
             >
               {/* Card Background */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${service.color} rounded-xl blur-sm group-hover:blur-md transition-all duration-300 opacity-20`} />
-              
+              <div
+                className={`absolute inset-0 bg-gradient-to-br ${service.color} rounded-xl blur-sm group-hover:blur-md transition-all duration-300 opacity-20`}
+              />
+
               {/* Main Card */}
               <div className="relative bg-black/30 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full hover:border-accent/50 transition-all duration-300">
-                
                 {/* Icon */}
-                <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  {React.createElement(iconMap[service.icon], { className: "text-2xl text-white" })}
+                <div
+                  className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                >
+                  {React.createElement(iconMap[service.icon], {
+                    className: "text-2xl text-white",
+                  })}
                 </div>
 
                 {/* Title */}
@@ -290,7 +349,10 @@ const Services = () => {
                       key={featureIndex}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.3, delay: index * 0.1 + featureIndex * 0.05 }}
+                      transition={{
+                        duration: 0.3,
+                        delay: index * 0.1 + featureIndex * 0.05,
+                      }}
                       className="flex items-center gap-2"
                     >
                       <div className="w-1.5 h-1.5 bg-accent rounded-full flex-shrink-0" />
@@ -311,11 +373,11 @@ const Services = () => {
         </motion.div>
 
         {/* Call to Action */}
-          <motion.div
+        <motion.div
           variants={fadeIn("up", 1.0)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
+          initial="hidden"
+          animate="show"
+          exit="hidden"
           className="text-center mt-16"
         >
           <div className="bg-gradient-to-r from-accent/10 to-blue-500/10 rounded-xl p-8 border border-accent/20">
@@ -323,8 +385,9 @@ const Services = () => {
               Ready to Start Your Project?
             </h3>
             <p className="text-white/80 mb-6 max-w-[500px] mx-auto">
-              Let's discuss your requirements and create something amazing together. 
-              I'm available for freelance projects, long-term collaborations, and consulting work.
+              Let's discuss your requirements and create something amazing
+              together. I'm available for freelance projects, long-term
+              collaborations, and consulting work.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -334,10 +397,10 @@ const Services = () => {
               Get In Touch
             </motion.button>
           </div>
-          </motion.div>
-        </div>
+        </motion.div>
+      </div>
     </div>
   );
 };
 
-export default Services; 
+export default Services;
