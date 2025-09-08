@@ -23,22 +23,21 @@ const CONTACTS = [
     icon: "FiMail",
     label: "Email",
     value: [
-      { text: "aroshsandaruwan619@gmail.com", link: "mailto:aroshsandaruwan619@gmail.com" },
+      {
+        text: "aroshsandaruwan619@gmail.com",
+        link: "mailto:aroshsandaruwan619@gmail.com",
+      },
     ],
   },
   {
     icon: "FaCalendarAlt",
     label: "Phone",
-    value: [
-      { text: "(+94) 76 23 56 027", link: "tel:+94762356027" },
-    ],
+    value: [{ text: "(+94) 76 23 56 027", link: "tel:+94762356027" }],
   },
   {
     icon: "FiMapPin",
     label: "Location",
-    value: [
-      { text: "Sri Lanka" }
-    ],
+    value: [{ text: "Kandy, Sri Lanka" }],
   },
 ];
 
@@ -69,18 +68,23 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gradient-dark-space py-16 px-2">
+    <div className="min-h-screen w-full flex items-center justify-center bg-gradient-dark-space py-36 px-2">
       <div className="w-full max-w-5xl flex flex-col md:flex-row gap-8 md:gap-12">
         {/* Left: Contact Info Card */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, ease: 'easeOut' }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           className="md:w-2/5 w-full rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 shadow-xl p-8 flex flex-col justify-between gap-10 group hover:border-accent/40 hover:shadow-accent/20 transition-all duration-300"
         >
           <div>
-            <h3 className="text-lg font-bold text-accent mb-2 tracking-widest uppercase">Contact</h3>
-            <p className="text-white/70 mb-6 text-sm">Feel free to reach out for collaborations or just a friendly hello 👋</p>
+            <h3 className="text-lg font-bold text-accent mb-2 tracking-widest uppercase">
+              Contact
+            </h3>
+            <p className="text-white/70 mb-6 text-sm">
+              Feel free to reach out for collaborations or just a friendly hello
+              👋
+            </p>
             <div className="flex flex-col gap-7">
               {CONTACTS.map((item, idx) => (
                 <motion.div
@@ -95,15 +99,27 @@ const Contact = () => {
                     whileHover={{ scale: 1.15, rotate: -8 }}
                     className="bg-accent/10 rounded-xl p-3 flex items-center justify-center min-w-[48px] min-h-[48px] text-accent shadow-md transition-transform duration-200"
                   >
-                    {React.createElement(iconMap[item.icon], { className: "text-2xl text-accent" })}
+                    {React.createElement(iconMap[item.icon], {
+                      className: "text-2xl text-accent",
+                    })}
                   </motion.div>
                   <div>
-                    <div className="text-xs text-gray-400 font-semibold uppercase mb-1 tracking-wide letter-spacing-wider">{item.label}</div>
+                    <div className="text-xs text-gray-400 font-semibold uppercase mb-1 tracking-wide letter-spacing-wider">
+                      {item.label}
+                    </div>
                     {item.value.map((v, i) =>
                       v.link ? (
-                        <a key={i} href={v.link} className="block text-accent hover:underline text-sm mb-1 transition-colors duration-200">{v.text}</a>
+                        <a
+                          key={i}
+                          href={v.link}
+                          className="block text-white hover:text-accent hover:underline text-sm mb-1 transition-colors duration-200"
+                        >
+                          {v.text}
+                        </a>
                       ) : (
-                        <div key={i} className="text-white text-sm mb-1">{v.text}</div>
+                        <div key={i} className="text-white text-sm mb-1">
+                          {v.text}
+                        </div>
                       )
                     )}
                   </div>
@@ -112,7 +128,9 @@ const Contact = () => {
             </div>
           </div>
           <div className="mt-8">
-            <div className="text-xs text-accent font-semibold uppercase mb-2 tracking-wide">Connect with me</div>
+            <div className="text-xs text-accent font-semibold uppercase mb-2 tracking-wide">
+              Connect with me
+            </div>
             <div className="flex gap-4">
               {SOCIALS.map((s, i) => (
                 <motion.a
@@ -120,11 +138,17 @@ const Contact = () => {
                   href={s.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.18, backgroundColor: "#F13024", color: "#fff" }}
+                  whileHover={{
+                    scale: 1.18,
+                    backgroundColor: "#F13024",
+                    color: "#fff",
+                  }}
                   className="bg-white/10 hover:bg-accent/20 transition rounded-full w-12 h-12 flex items-center justify-center shadow-md border border-white/10 text-accent hover:text-white"
-                  style={{ transition: 'all 0.2s' }}
+                  style={{ transition: "all 0.2s" }}
                 >
-                  {React.createElement(iconMap[s.icon], { className: "text-2xl" })}
+                  {React.createElement(iconMap[s.icon], {
+                    className: "text-2xl",
+                  })}
                 </motion.a>
               ))}
             </div>
@@ -203,4 +227,4 @@ const Contact = () => {
   );
 };
 
-export default Contact; 
+export default Contact;

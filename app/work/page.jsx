@@ -40,6 +40,7 @@ import Image from "next/image";
 import Bulb from "../../components/Bulb";
 import Circles from "../../components/Circles";
 import { fadeIn } from "../../variants";
+import { useRouter } from "next/navigation";
 
 // Icon mapping for server-side compatibility
 const iconMap = {
@@ -302,6 +303,7 @@ const projectData = [
 const Work = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedProject, setSelectedProject] = useState(null);
+  const router = useRouter();
 
   const categories = [
     { id: "all", name: "All Projects" },
@@ -514,26 +516,7 @@ const Work = () => {
           animate="show"
           exit="hidden"
           className="mt-16"
-        >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="text-center p-6 bg-white/5 rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-accent mb-2">8</div>
-              <div className="text-white/70 text-sm">Total Projects</div>
-            </div>
-            <div className="text-center p-6 bg-white/5 rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-green-400 mb-2">7</div>
-              <div className="text-white/70 text-sm">Completed</div>
-            </div>
-            <div className="text-center p-6 bg-white/5 rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-yellow-400 mb-2">1</div>
-              <div className="text-white/70 text-sm">Ongoing</div>
-            </div>
-            <div className="text-center p-6 bg-white/5 rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-blue-400 mb-2">6</div>
-              <div className="text-white/70 text-sm">Technologies</div>
-            </div>
-          </div>
-        </motion.div>
+        ></motion.div>
 
         {/* Call to Action */}
         <motion.div
@@ -554,6 +537,7 @@ const Work = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => router.push("/contact")}
               className="bg-accent hover:bg-accent/80 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg shadow-accent/25"
             >
               Start a Project

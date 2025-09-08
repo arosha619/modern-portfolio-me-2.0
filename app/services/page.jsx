@@ -39,6 +39,7 @@ import {
 import Bulb from "../../components/Bulb";
 import Circles from "../../components/Circles";
 import { fadeIn } from "../../variants";
+import { useRouter } from "next/navigation";
 
 // Icon mapping for server-side compatibility
 const iconMap = {
@@ -223,6 +224,7 @@ const serviceData = [
 const Services = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [hoveredService, setHoveredService] = useState(null);
+  const router = useRouter();
 
   const categories = [
     { id: "all", name: "All Services" },
@@ -392,6 +394,7 @@ const Services = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => router.push("/contact")}
               className="bg-accent hover:bg-accent/80 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg shadow-accent/25"
             >
               Get In Touch

@@ -93,8 +93,9 @@ export default function Home() {
         </p>
         <div className="flex flex-col sm:flex-row items-center gap-6 mb-8 w-full lg:w-auto justify-center lg:justify-start">
           <a
-            href="/resume.pdf"
-            download
+            href="https://drive.google.com/drive/folders/114slgiq6OcZ-KQwjdU50wMd2j_b1gZTc?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
             className="relative inline-block px-8 py-3 font-mono text-lg font-semibold bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded shadow z-10"
           >
             <span className="relative z-10">Download Resume</span>

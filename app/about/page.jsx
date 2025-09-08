@@ -361,10 +361,13 @@ const About = () => {
           className="max-w-[600px] mb-6 xl:mb-8 px-4 xl:px-0 text-center"
         >
           A passionate Software Engineer with expertise in full-stack
-          development, specializing in React, Next.js, and Node.js. From Sri
-          Lanka to South Korea, I've built scalable applications and
-          collaborated with international teams to deliver innovative solutions
-          that drive business growth and user satisfaction.
+          development, specializing in React, Next.js and backend technologies
+          such as Node.js, DotNet and Nest.js. Skilled in building scalable
+          APIs, managing databases, and implementing cloud-based solutions. With
+          growing expertise in DevOps practices, containerization, and CI/CD
+          pipelines, From Sri Lanka to South Korea, I've built scalable
+          applications and collaborated with international teams to deliver
+          innovative solutions that drive business growth and user satisfaction.
         </motion.p>
       </div>
 
